@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/04/03/Untitled/"/>
+      <url>/2022/04/03/Untitled/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS属性大全</title>
       <link href="/2022/01/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CSS%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8/"/>
       <url>/2022/01/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CSS%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8/</url>
@@ -21,6 +34,31 @@
         <tags>
             
             <tag> 前端经验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS第四天-浮动</title>
+      <link href="/2022/01/19/CSS%E7%AC%AC%E5%9B%9B%E5%A4%A9-%E6%B5%AE%E5%8A%A8/"/>
+      <url>/2022/01/19/CSS%E7%AC%AC%E5%9B%9B%E5%A4%A9-%E6%B5%AE%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CSS第四天-浮动"><a href="#CSS第四天-浮动" class="headerlink" title="CSS第四天-浮动"></a>CSS第四天-浮动</h1><hr><h4 id="结构伪类选择器："><a href="#结构伪类选择器：" class="headerlink" title="结构伪类选择器："></a>结构伪类选择器：</h4><table><thead><tr><th align="left">选择器</th><th>说明</th></tr></thead><tbody><tr><td align="left">:first-child</td><td>找到父元素的<strong>第一个</strong>子元素</td></tr><tr><td align="left">:last-child</td><td>找到父元素的<strong>最后一个</strong>子元素</td></tr><tr><td align="left">:nth-child(n)</td><td>找到父元素<strong>第n个</strong>子元素</td></tr><tr><td align="left">:nth-last-child(n)</td><td>找到父元素中<strong>倒数</strong>第n个子元素</td></tr><tr><td align="left">:nth-of-type(n)</td><td>找到父元素的子元素固定死</td></tr></tbody></table><ol><li>根据元素在HTML中的结构关系查找元素</li><li>减少对于HTML中类的依赖，有利于保持代码整洁</li><li>场景：常用于查找某父级选择器中的子元素</li><li>n为：0、1、2、3、4、5、6、……</li><li>:nth-of-type → 先通过该 类型 找到符合的一堆子元素，然后在这一堆子元素中数个数</li></ol><table><thead><tr><th>功能</th><th>公式</th></tr></thead><tbody><tr><td>偶数</td><td>2n、even</td></tr><tr><td>奇数</td><td>2n+1、2n-1、odd</td></tr><tr><td>找到前5个</td><td>-n+5</td></tr><tr><td>找到从第5个往后</td><td>n+5</td></tr></tbody></table><hr><h4 id="标准流："><a href="#标准流：" class="headerlink" title="标准流："></a>标准流：</h4><p>标准流：又称文档流，是浏览器在渲染显示网页内容时默认采用的一套排版规则，规定了应该以何种方式排列元素</p><p>块级-排版规则：从上往下，垂直布局，独占一行</p><p>行内或行内块-排版规则：从左往右，水平布局，空间不够自动折行</p><hr><h4 id="浮动（float）："><a href="#浮动（float）：" class="headerlink" title="浮动（float）："></a>浮动（float）：</h4><table><thead><tr><th>属性名</th><th>效果</th></tr></thead><tbody><tr><td>float：left</td><td>左浮动</td></tr><tr><td>float：right</td><td>右浮动</td></tr></tbody></table><ul><li><p>早期的作用：图文环绕 | 现在的作用：网页布局</p></li><li><p>让垂直布局的盒子变成水平布局</p></li><li><p>浮动的元素不能通过text-align:center或者margin:0 auto，让浮动元素本身水平居中</p><p>1、浮动的元素找相邻浮动的元素，顶部对齐，在同一行内显示 要浮动都浮动（加强版的行内块）</p><p>2、浮动的元素脱离标准流 在页面中不占有位置</p><p>3、浮动的元素只会影响到后面的元素</p><p>4、浮动元素不会超出父元素，在父元素内部进行浮动</p><p>5、浮动的元素只会压住下面的盒子，压不住盒子里的内容</p><p>6、通栏：从左贯穿到右的一个盒子，这个盒子只给高度，不给宽度，让宽度默认给浏览器一样宽</p><p>7、版心：一个有宽度，且居中的盒子</p></li></ul><hr><h4 id="清除浮动："><a href="#清除浮动：" class="headerlink" title="清除浮动："></a>清除浮动：</h4><p>影响：如果子元素浮动了，此时子元素不能撑开标准流的块级父元素</p><p>原因：子元素浮动后脱标 → 不占位置</p><p>目的：需要父元素有高度，从而不影响其他网页元素的布局</p><h5 id="清除浮动的方法："><a href="#清除浮动的方法：" class="headerlink" title="清除浮动的方法："></a>清除浮动的方法：</h5><table><thead><tr><th align="left">方法</th><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td align="left">直接设置父元素高度</td><td>优点简单粗暴，方便</td><td>缺点：有些布局中不能固定父元素高度。如：新闻列表、京东推荐模块</td></tr><tr><td align="left">额外标签法</td><td>在父元素内容的最后添加一个块级元素。给添加的块级元素设置 clear:both</td><td>会在页面中添加额外的标签，会让页面的HTML结构变得复杂</td></tr><tr><td align="left">单伪元素清除法</td><td>项目中使用，直接给标签加类即可清除浮动</td><td>操作：用伪元素替代了额外标签</td></tr><tr><td align="left">双伪元素清除法</td><td>项目中使用，直接给标签加类即可清除浮动</td><td></td></tr><tr><td align="left">给父元素设置overflow : hidden</td><td>方便</td><td>操作：直接给父元素设置 overflow : hidden</td></tr></tbody></table><hr><h5 id="BFC的介绍："><a href="#BFC的介绍：" class="headerlink" title="BFC的介绍："></a>BFC的介绍：</h5><ol><li>块格式化上下文（Block Formatting Context）：BFC</li><li>是Web页面的可视CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域</li></ol><h5 id="创建BFC方法："><a href="#创建BFC方法：" class="headerlink" title="创建BFC方法："></a>创建BFC方法：</h5><ol><li>html标签是BFC盒子</li><li>浮动元素是BFC盒子</li><li>行内块元素是BFC盒子</li><li>overflow属性取值不为visible。如：auto、hidden…</li></ol><h5 id="BFC盒子常见特点："><a href="#BFC盒子常见特点：" class="headerlink" title="BFC盒子常见特点："></a>BFC盒子常见特点：</h5><ol><li>BFC盒子会默认包裹住内部子元素（标准流、浮动）→ 应用：清除浮动</li><li>BFC盒子本身与子元素之间不存在margin的塌陷现象 → 应用：解决margin的塌陷</li></ol><hr><h4 id="本节单词："><a href="#本节单词：" class="headerlink" title="本节单词："></a>本节单词：</h4><ol><li>float</li><li>first</li><li>child</li><li>last</li><li>nth</li><li>of</li></ol><hr><p><img src="/%E6%B2%A1%E5%86%99%E5%A5%BD"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记-CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记-CSS </tag>
             
         </tags>
       
@@ -421,6 +459,31 @@
         <tags>
             
             <tag> 前端经验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>免费常用的前端CDN库</title>
+      <link href="/2021/08/01/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%85%8D%E8%B4%B9%E5%B8%B8%E7%94%A8%E7%9A%84%E5%89%8D%E7%AB%AFCDN%E5%BA%93/"/>
+      <url>/2021/08/01/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%85%8D%E8%B4%B9%E5%B8%B8%E7%94%A8%E7%9A%84%E5%89%8D%E7%AB%AFCDN%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="免费常用的前端CDN库"><a href="#免费常用的前端CDN库" class="headerlink" title="免费常用的前端CDN库"></a>免费常用的前端CDN库</h1><h4 id="CDN简单介绍："><a href="#CDN简单介绍：" class="headerlink" title="CDN简单介绍："></a>CDN简单介绍：</h4><ul><li>CDN全称ContentDeliveryNetwork。即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。</li><li>静态资源 CDN 公共库是指一些服务商将我们常用的 JavaScript 库存放到网上，方便开发者直接调用，并且还对其提供 CDN 加速，这样一来可以让用户加速访问这些资源，二来还可节约自己服务器的流量。</li></ul><p>1️⃣<a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a></p><p>使用最为广泛的CDN了，除了有静态库的加速外，还有npmgithubWordPress加速，甚至还能加速你自己的GitHub库。不过21年年底，国内CDN备案给注销了，现在使用的是日本等周边的服务器，速度已经比不上以前了。</p><p>2️⃣<a href="https://cdnjs.com/">https://cdnjs.com/</a></p><p>CDNJS提供非常完整的 JavaScript 库，无论是热门或是冷门的一应俱全。若你觉得它们缺少哪些好用的函式库，也可以自行提交到网站里，通过审核后就 CDNJS 就会为你分流 js文件！唯一的缺点是国外的。</p><p>3️⃣<a href="http://staticfile.org/">http://staticfile.org/</a></p><p>七牛云提供的CDN库，速度不错。</p><p>4️⃣<a href="http://cdn.bytedance.com/">http://cdn.bytedance.com/</a></p><p>字节跳动静态资源库，CDN节点也非常多，值得推荐的国内站点，背靠字节跳动，质量也比较有保障。</p><p>5️⃣<a href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></p><p>bootcdn，国内节点众多，BootCDN 是猫云联合 Bootstrap 中文网 共同支持并维护的前端开源项目免费 CDN 服务，致力于为 Bootstrap、jQuery、React、Vue.js 一样优秀的前端开源项目提供稳定、快速的免费 CDN 加速服务。BootCDN 所收录的开源项目主要同步于 cdnjs 开源项目仓库。</p><p>6️⃣<a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></p><p>原360前端库的资源，除了有静态库，还有Google字体库</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他技术栈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 其他技术栈 </tag>
             
         </tags>
       
