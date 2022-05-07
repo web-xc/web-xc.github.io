@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.xindong350.top/2022/01/19/CSS%E7%AC%AC%E5%9B%9B%E5%A4%A9-%E6%B5%AE%E5%8A%A8/</loc>
+    <loc>https://www.xindong350.top/about/index.html</loc>
+    
+    <lastmod>2022-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.xindong350.top/link/index.html</loc>
     
     <lastmod>2022-05-07</lastmod>
     
@@ -20,18 +29,9 @@
   </url>
   
   <url>
-    <loc>https://www.xindong350.top/link/index.html</loc>
+    <loc>https://www.xindong350.top/2022/01/19/CSS%E7%AC%AC%E5%9B%9B%E5%A4%A9-%E6%B5%AE%E5%8A%A8/</loc>
     
-    <lastmod>2022-05-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.xindong350.top/about/index.html</loc>
-    
-    <lastmod>2022-05-05</lastmod>
+    <lastmod>2022-05-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
