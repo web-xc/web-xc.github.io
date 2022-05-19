@@ -1,151 +1,322 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>「学习笔记」CSS基础 | 小城故事</title><meta name="keywords" content="前端经验"><meta name="author" content="小城故事"><meta name="copyright" content="小城故事"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="「学习笔记」CSS基础前言本篇文章着重梳理之前所学的CSS知识点，查漏补缺。同时，试着用git将重点案例存放到远程仓库中，更近一步贴近公司流程。💪💪 CSS构造块「1. HTML的局限性」  HTML满足不了设计者的需求，可以将网页结构与样式相分离，这样就可以在不更改网页结构的前提下，更换网站的样式。 操作html属性不方便 HTML里面添加样式带来的是无尽的臃肿和繁琐  「2. CSS网页的">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="小城故事">
+  <meta name="keywords" content="小城故事，小城，小陈故事，小城&amp;故事">
+  
+    <meta name="description" content="「学习笔记」CSS基础前言本篇文章着重梳理之前所学的CSS知识点，查漏补缺。同时，试着用git将重点案例存放到远程仓库中，更近一步贴近公司流程。💪💪 CSS构造块「1. HTML的局限性」  HTML满足不了设计者的需求，可以将网页结构与样式相分离，这样就可以在不更改网页结构的前提下，更换网站的样式。 操作html属性不方便 HTML里面添加样式带来的是无尽的臃肿和繁琐  「2. CSS网页的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「学习笔记」CSS基础">
 <meta property="og:url" content="https://www.xindong350.top/2022/01/02/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8DCSS%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="小城故事">
 <meta property="og:description" content="「学习笔记」CSS基础前言本篇文章着重梳理之前所学的CSS知识点，查漏补缺。同时，试着用git将重点案例存放到远程仓库中，更近一步贴近公司流程。💪💪 CSS构造块「1. HTML的局限性」  HTML满足不了设计者的需求，可以将网页结构与样式相分离，这样就可以在不更改网页结构的前提下，更换网站的样式。 操作html属性不方便 HTML里面添加样式带来的是无尽的臃肿和繁琐  「2. CSS网页的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___pic1.jpg">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
 <meta property="article:published_time" content="2022-01-02T10:00:00.000Z">
 <meta property="article:modified_time" content="2022-03-28T05:59:29.617Z">
 <meta property="article:author" content="小城故事">
 <meta property="article:tag" content="前端经验">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___pic1.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/5d7ec38e17bd491e.jpg"><link rel="canonical" href="https://www.xindong350.top/2022/01/02/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8DCSS%E5%9F%BA%E7%A1%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: {"limitCount":60,"languages":{"author":"作者: 小城故事","link":"链接: ","source":"来源: 小城故事","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isAnchor: true
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '「学习笔记」CSS基础',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2022-03-28 13:59:29'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/展开.css"><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/yuanjiao.css"><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/全屏.css"><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/juz.css"><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/文章juz.css"><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/滚动条.css"><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/宽度.css"><link rel="stylesheet" href="https://www.xindong350.top/My-blog-CSS/link.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+  <title>「学习笔记」CSS基础 - 小城故事</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"www.xindong350.top","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/5d7ec38e17bd491e.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="https://www.xindong350.top/music"><i class="fa-fw fa fa-music"></i><span> 音乐解锁</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.imzjw.cn"><i class="fa-fw fa-fw fas fa-map"></i><span> 网址收藏</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小城故事</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="https://www.xindong350.top/music"><i class="fa-fw fa fa-music"></i><span> 音乐解锁</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.imzjw.cn"><i class="fa-fw fa-fw fas fa-map"></i><span> 网址收藏</span></a></div></div></div><div id="navFn"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索文章</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">「学习笔记」CSS基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-02T10:00:00.000Z" title="发表于 2022-01-02 18:00:00">2022-01-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-28T05:59:29.617Z" title="更新于 2022-03-28 13:59:29">2022-03-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/">前端经验</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="「学习笔记」CSS基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="「学习笔记」CSS基础"><a href="#「学习笔记」CSS基础" class="headerlink" title="「学习笔记」CSS基础"></a>「学习笔记」CSS基础</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇文章着重梳理之前所学的CSS知识点，查漏补缺。同时，试着用git将重点案例存放到远程仓库中，更近一步贴近公司流程。💪💪</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>小城故事</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          <span id="subtitle" title="「学习笔记」CSS基础">
+            
+          </span>
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-01-02 18:00" pubdate>
+          2022年1月2日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          23k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          190 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">「学习笔记」CSS基础</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="「学习笔记」CSS基础"><a href="#「学习笔记」CSS基础" class="headerlink" title="「学习笔记」CSS基础"></a>「学习笔记」CSS基础</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇文章着重梳理之前所学的CSS知识点，查漏补缺。同时，试着用git将重点案例存放到远程仓库中，更近一步贴近公司流程。💪💪</p>
 <h2 id="CSS构造块"><a href="#CSS构造块" class="headerlink" title="CSS构造块"></a>CSS构造块</h2><p><strong>「1. HTML的局限性」</strong></p>
 <ul>
 <li>HTML满足不了设计者的需求，可以将网页结构与样式相分离，这样就可以在不更改网页结构的前提下，更换网站的样式。</li>
@@ -168,7 +339,7 @@
 </li>
 </ul>
 <p><strong>「4. CSS注释」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* 这是注释 */</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/* 这是注释 */</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="引入CSS样式表"><a href="#引入CSS样式表" class="headerlink" title="引入CSS样式表"></a>引入CSS样式表</h3><p><strong>「1.行内式(内联样式)」</strong></p>
 <p>通过标签的style属性来设置元素的样式</p>
@@ -179,7 +350,7 @@
 <li>只能控制当前的标签和以及嵌套在其中的字标签，造成代码冗余。</li>
 <li>**缺点:**没有实现样式和结构相分离。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;标签名 style=&quot;属性1:属性值1; 属性2:属性值2; 属性3:属性值3;&quot;&gt; 内容 &lt;/标签名&gt;</span><br><span class="line">例如：</span><br><span class="line">&lt;div style=&quot;color: red; font-size: 12px;&quot;&gt;青春不常在，抓紧谈恋爱&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs applescript">&lt;标签名 style=<span class="hljs-string">&quot;属性1:属性值1; 属性2:属性值2; 属性3:属性值3;&quot;</span>&gt; 内容 &lt;/标签名&gt;<br>例如：<br>&lt;<span class="hljs-keyword">div</span> style=<span class="hljs-string">&quot;color: red; font-size: 12px;&quot;</span>&gt;青春不常在，抓紧谈恋爱&lt;/<span class="hljs-keyword">div</span>&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「2.内部样式表(内嵌样式表)」</strong></p>
 <p>也称为内嵌式，将CSS代码集中写在HTML文档的head头部标签中，并且用style标签定义。</p>
@@ -189,7 +360,7 @@
 <li>只能控制当前的页面</li>
 <li>**缺点:**没有彻底分离结构与样式</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style type=&quot;text/CSS&quot;&gt;</span><br><span class="line">    选择器（选择的标签） &#123; </span><br><span class="line">      属性1: 属性值1;</span><br><span class="line">      属性2: 属性值2; </span><br><span class="line">      属性3: 属性值3;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/CSS&quot;</span>&gt;</span><span class="css"></span><br><span class="css">    选择器（选择的标签） &#123; </span><br><span class="css">      属性<span class="hljs-number">1</span>: 属性值<span class="hljs-number">1</span>;</span><br><span class="css">      属性<span class="hljs-number">2</span>: 属性值<span class="hljs-number">2</span>; </span><br><span class="css">      属性<span class="hljs-number">3</span>: 属性值<span class="hljs-number">3</span>;</span><br><span class="css">    &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>「3.外部样式表(外链式)」</strong></p>
 <p>也称链入式，是将所有的样式放在一个或多个以.css为扩展名的外部样式表文件中，通过link标签将外部样式表文件链接到HTML文档中。</p>
@@ -197,10 +368,10 @@
 <li><code>rel</code>:定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件。</li>
 <li><code>href</code>:定义所链接外部样式表文件的URL，可以是相对路径，也可以是绝对路径。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">&quot;index.css&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「4.团队约定-代码风格」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/*1.紧凑格式 (Compact)*/</span><br><span class="line">h3 &#123; color: deeppink;font-size: 20px;&#125;</span><br><span class="line">// 2.一种是展开格式（推荐）</span><br><span class="line">h3 &#123;</span><br><span class="line"> color: deeppink;</span><br><span class="line">    font-size: 20px;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 团队约定-代码大小写*/</span><br><span class="line">/* 样式选择器，属性名，属性值关键字全部使用小写字母书写，属性字符串允许使用大小写。*/</span><br><span class="line">/* 推荐 */</span><br><span class="line">h3&#123;</span><br><span class="line"> color: pink;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 不推荐 */</span><br><span class="line">H3&#123;</span><br><span class="line"> COLOR: PINK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*1.紧凑格式 (Compact)*/</span><br><span class="hljs-selector-tag">h3</span> &#123; <span class="hljs-attribute">color</span>: deeppink;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;&#125;<br>// <span class="hljs-number">2</span>.一种是展开格式（推荐）<br><span class="hljs-selector-tag">h3</span> &#123;<br> <span class="hljs-attribute">color</span>: deeppink;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;    <br>&#125;<br><br><span class="hljs-comment">/* 团队约定-代码大小写*/</span><br><span class="hljs-comment">/* 样式选择器，属性名，属性值关键字全部使用小写字母书写，属性字符串允许使用大小写。*/</span><br><span class="hljs-comment">/* 推荐 */</span><br><span class="hljs-selector-tag">h3</span>&#123;<br> <span class="hljs-attribute">color</span>: pink;<br>&#125;<br> <br><span class="hljs-comment">/* 不推荐 */</span><br><span class="hljs-selector-tag">H3</span>&#123;<br> <span class="hljs-attribute">COLOR</span>: PINK;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -213,14 +384,14 @@
 <li>优点：快速为网页中同类型的标签统一样式</li>
 <li>缺点：不能设计差异化样式。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标签名&#123;属性1:属性值1; 属性2:属性值2; 属性3:属性值3; &#125; </span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">标签名&#123;属性<span class="hljs-number">1</span>:属性值<span class="hljs-number">1</span>; 属性<span class="hljs-number">2</span>:属性值<span class="hljs-number">2</span>; 属性<span class="hljs-number">3</span>:属性值<span class="hljs-number">3</span>; &#125; <br></code></pre></td></tr></table></figure>
 
 <p><strong>「2. 类选择器」</strong></p>
 <ul>
 <li>类选择器使用”.”(英文点号)进行标识，后面紧跟类名。</li>
 <li>语法：类名选择器</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.类名  &#123;   </span><br><span class="line">    属性1:属性值1; </span><br><span class="line">    属性2:属性值2; </span><br><span class="line">    属性3:属性值3;     </span><br><span class="line">&#125;</span><br><span class="line">&lt;p class=&#x27;类名&#x27;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml">.类名  &#123;   <br>    属性1:属性值1; <br>    属性2:属性值2; <br>    属性3:属性值3;     <br>&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&#x27;类名&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p><code>优点</code>：可以为元素对象定义单独或相同的样式。可以选择一个或者多个标签。</p>
@@ -238,17 +409,17 @@
 <ul>
 <li>元素的id值是唯一的，只能对应于文档中某一个具体的元素。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#id名 &#123;属性1:属性值1; 属性2:属性值2; 属性3:属性值3; &#125;</span><br><span class="line">&lt;p id=&quot;id名&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment">#id名 &#123;属性1:属性值1; 属性2:属性值2; 属性3:属性值3; &#125;</span><br>&lt;p <span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;id名&quot;</span>&gt;&lt;/p&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「4. 通配符选择器」</strong></p>
 <p>通配符选择器用<code>*</code>号表示，<code>*</code> 就是选择所有的标签。它是所有选择器中作用范围最广的，能匹配页面中所有的元素。</p>
 <ul>
 <li><code>注意</code>：会匹配页面所有的元素，降低页面响应速度，不建议随便使用</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* &#123; 属性1:属性值1; 属性2:属性值2; 属性3:属性值3; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">* &#123; 属性<span class="hljs-number">1</span>:属性值<span class="hljs-number">1</span>; 属性<span class="hljs-number">2</span>:属性值<span class="hljs-number">2</span>; 属性<span class="hljs-number">3</span>:属性值<span class="hljs-number">3</span>; &#125;<br></code></pre></td></tr></table></figure>
 
 <p>例如下面代码，使用通配符选择器定义CSS样式，清除所有HTML标记的默认边距。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  margin: 0;                    /* 定义外边距*/</span><br><span class="line">  padding: 0;                   /* 定义内边距*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">* &#123;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;                    <span class="hljs-comment">/* 定义外边距*/</span><br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;                   <span class="hljs-comment">/* 定义内边距*/</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「5. 基础选择器总结」</strong></p>
 <table>
@@ -296,7 +467,7 @@
 <li>尽量少用ID选择器</li>
 <li>不使用无具体语义定义的标签选择器。</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* 推荐 */</span><br><span class="line">.jdc &#123;&#125;</span><br><span class="line">li &#123;&#125;</span><br><span class="line">p&#123;&#125;</span><br><span class="line"></span><br><span class="line">/* 不推荐 */</span><br><span class="line">*&#123;&#125;</span><br><span class="line">#jdc &#123;&#125;</span><br><span class="line">div&#123;&#125;   因为div 没有语义，我们尽量少用</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">/* 推荐 */</span><br><span class="hljs-selector-class">.jdc</span> &#123;&#125;<br><span class="hljs-selector-tag">li</span> &#123;&#125;<br><span class="hljs-selector-tag">p</span>&#123;&#125;<br><br><span class="hljs-comment">/* 不推荐 */</span><br>*&#123;&#125;<br><span class="hljs-selector-id">#jdc</span> &#123;&#125;<br><span class="hljs-selector-tag">div</span>&#123;&#125;   因为<span class="hljs-selector-tag">div</span> 没有语义，我们尽量少用<br></code></pre></td></tr></table></figure>
 
 
 
@@ -307,9 +478,9 @@
 <li>其写法就是把外层标签写在前面，内层标签写在后面，中间用<strong>「空格」</strong>分隔，先写父亲爷爷，再写儿子孙子。</li>
 <li>子孙后代都可以这么选择。或者说，它能选择任何包含在内 的标签。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">父级 子级&#123;属性:属性值;属性:属性值;&#125;</span><br><span class="line"></span><br><span class="line">.class h3 &#123;color:red;font-size:16px;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">父级 子级&#123;属性:属性值;属性:属性值;&#125;<br><br><span class="hljs-selector-class">.class</span> <span class="hljs-selector-tag">h3</span> &#123;<span class="hljs-attribute">color</span>:red;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">16px</span>;&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ul>
 <li>当标签发生嵌套时，内层标签就成为外层标签的后代。</li>
 <li>子孙后代都可以这么选择。或者说，它能选择任何包含在内的标签。</li>
@@ -320,21 +491,21 @@
 <li>其写法就是把父级标签写在前面，子级标签写在后面，中间跟一个 <code>&gt;</code> 进行连接</li>
 <li>这里的子,指的是亲儿子。不包含孙子 重孙子之类。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.class&gt;h3 &#123;color:red;font-size:14px;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.class</span>&gt;<span class="hljs-selector-tag">h3</span> &#123;<span class="hljs-attribute">color</span>:red;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">14px</span>;&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「3. 交集选择器」</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ul>
 <li>其中第一个为标签选择器，第二个为class选择器，两个选择器之间<code>不能有空格</code>，如h3.special。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">交集选择器是并且的意思,即...又...的意思</span><br><span class="line">比如：   p.one   选择的是： 类名为 .one 的段落标签。 </span><br><span class="line">/*用的相对来说比较少，不建议使用。*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus">交集选择器是并且的意思,即...又...的意思<br>比如：   <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.one</span>   选择的是： 类名为 <span class="hljs-selector-class">.one</span> 的段落标签。 <br><span class="hljs-comment">/*用的相对来说比较少，不建议使用。*/</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>「4. 并集选择器」</strong>如果某些选择器定义的相同样式，就可以利用并集选择器，可以让代码更简洁。并集选择器（CSS选择器分组）是各个选择器通过<code>,</code>连接而成的，通常用于集体声明。</p>
 <ul>
 <li>任何形式的选择器（包括标签选择器、class类选择器 id选择器等），都可以作为并集选择器的一部分。</li>
 <li>并集选择器通常用于集体声明 ，逗号隔开的，所有选择器都会执行后面样式，逗号可以理解为和的意思。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">比如  </span><br><span class="line">.one, </span><br><span class="line">p , </span><br><span class="line">#test &#123;color: #F00;&#125;  </span><br><span class="line">表示   .one 和 p  和 #test 这三个选择器都会执行颜色为红色。 </span><br><span class="line">通常用于集体声明。  </span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus">比如  <br><span class="hljs-selector-class">.one</span>, <br><span class="hljs-selector-tag">p</span> , <br><span class="hljs-selector-id">#test</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#F00</span>;&#125;  <br>表示   <span class="hljs-selector-class">.one</span> 和 <span class="hljs-selector-tag">p</span>  和 <span class="hljs-selector-id">#test</span> 这三个选择器都会执行颜色为红色。 <br>通常用于集体声明。  <br></code></pre></td></tr></table></figure>
 
 <p><strong>「5. 链接伪类选择器」</strong></p>
 <p>用于向某些选择器添加特殊的效果。写的时候，他们的顺序尽量不要颠倒,按照lvha的顺序。否则可能引起错误。</p>
@@ -345,7 +516,7 @@
 <li><code>a:hover</code> 鼠标移动到链接上</li>
 <li><code>a:active</code> 选定的链接</li>
 </ul>
-<h5 id="实际工作中，很少写全四个状态，一般写法如下："><a href="#实际工作中，很少写全四个状态，一般写法如下：" class="headerlink" title="实际工作中，很少写全四个状态，一般写法如下："></a>实际工作中，很少写全四个状态，一般写法如下：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a &#123;   /* a是标签选择器  所有的链接 */</span><br><span class="line">   font-weight: 700;</span><br><span class="line">   font-size: 16px;</span><br><span class="line">   color: gray;</span><br><span class="line">      text-decoration: none; /* 清除链接默认的下划线*/</span><br><span class="line">&#125;</span><br><span class="line">a:hover &#123;   /* :hover 是链接伪类选择器 鼠标经过 */</span><br><span class="line">   color: red; /*  鼠标经过的时候，由原来的 灰色 变成了红色 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="实际工作中，很少写全四个状态，一般写法如下："><a href="#实际工作中，很少写全四个状态，一般写法如下：" class="headerlink" title="实际工作中，很少写全四个状态，一般写法如下："></a>实际工作中，很少写全四个状态，一般写法如下：</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span> &#123;   <span class="hljs-comment">/* a是标签选择器  所有的链接 */</span><br>   <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;<br>   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;<br>   <span class="hljs-attribute">color</span>: gray;<br>      <span class="hljs-attribute">text-decoration</span>: none; <span class="hljs-comment">/* 清除链接默认的下划线*/</span><br>&#125;<br><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;   <span class="hljs-comment">/* :hover 是链接伪类选择器 鼠标经过 */</span><br>   <span class="hljs-attribute">color</span>: red; <span class="hljs-comment">/*  鼠标经过的时候，由原来的 灰色 变成了红色 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「6. 复合选择器总结」</strong></p>
 <table>
@@ -401,21 +572,21 @@
 <li><code>谷歌浏览器</code>默认的文字大小为16px</li>
 <li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小。一般给body指定整个页面文字的大小。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123; font-size:20px; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span> &#123; <span class="hljs-attribute">font-size</span>:<span class="hljs-number">20px</span>; &#125;<br></code></pre></td></tr></table></figure>
 
 <h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><ul>
 <li>相对长度单位、绝对长度单位</li>
 </ul>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><strong>「2. font-family」</strong></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><strong>「2. font-family」</strong></p>
 <ul>
 <li>font-family属性用于设置哪一种字体。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123; font-family:&quot;微软雅黑&quot;;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span> &#123; <span class="hljs-attribute">font-family</span>:<span class="hljs-string">&quot;微软雅黑&quot;</span>;&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>指定多个字体，如果浏览器不支持第一个字体就会尝试下一个直到找到合适的字体，如果都没有，以电脑默认字体为准。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123;font-family: Arial,&quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span> &#123;<span class="hljs-attribute">font-family</span>: Arial,<span class="hljs-string">&quot;Microsoft Yahei&quot;</span>, <span class="hljs-string">&quot;微软雅黑&quot;</span>;&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>CSS Unicode字体</p>
@@ -427,7 +598,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &quot;\5FAE\8F6F\96C5\9ED1&quot;;   表示设置字体为“微软雅黑”。</span><br></pre></td></tr></table></figure>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">font-family: &quot;<span class="hljs-symbol">\5</span>FAE<span class="hljs-symbol">\8</span>F6F<span class="hljs-symbol">\9</span>6C5<span class="hljs-symbol">\9</span>ED1&quot;;   表示设置字体为“微软雅黑”。<br></code></pre></td></tr></table></figure>
 
 <p><strong>「3. font-weight」</strong></p>
 <table>
@@ -469,7 +640,7 @@
 </tr>
 </tbody></table>
 <p><strong>「5. font:综合设置字体样式」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; font: font-style  font-weight  font-size/line-height  font-family;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">选择器 &#123; <span class="hljs-built_in">font</span>: <span class="hljs-built_in">font</span>-<span class="hljs-built_in">style</span>  <span class="hljs-built_in">font</span>-weight  <span class="hljs-built_in">font</span>-size/line-<span class="hljs-built_in">height</span>  <span class="hljs-built_in">font</span>-family;&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>注意：使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以<code>空格</code>隔开</p>
@@ -569,23 +740,23 @@
 <ul>
 <li>line-height常用的属性值单位有三种，分别为像素px，相对值em和百分比%，实际工作中使用最多的是像素px</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一般情况下，行距比字号大7--8像素左右就可以了。</span><br><span class="line">line-height: 24px;</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arduino">一般情况下，行距比字号大<span class="hljs-number">7</span>-<span class="hljs-number">-8</span>像素左右就可以了。<br>line-height: <span class="hljs-number">24</span>px;<br></code></pre></td></tr></table></figure>
 
-<h4 id="行高测量"><a href="#行高测量" class="headerlink" title="行高测量"></a>行高测量</h4><p>行高测量方法：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><code>行高测量方法</code>行高我们利用最多的一个地方是：可以让单行文本在盒子中垂直居中对齐。</p>
+<h4 id="行高测量"><a href="#行高测量" class="headerlink" title="行高测量"></a>行高测量</h4><p>行高测量方法：<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><code>行高测量方法</code>行高我们利用最多的一个地方是：可以让单行文本在盒子中垂直居中对齐。</p>
 <blockquote>
 <p><strong>文字的行高等于盒子的高度。</strong>行高  &#x3D;  上距离 +  内容高度  + 下距离<br>上距离和下距离总是相等的，因此文字看上去是垂直居中的。</p>
 </blockquote>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <h4 id="行高与高度的三种关系"><a href="#行高与高度的三种关系" class="headerlink" title="行高与高度的三种关系"></a>行高与高度的三种关系</h4><ul>
 <li>如果 行高 等 高度  文字会 垂直居中</li>
 <li>如果行高 大于 高度  文字会 偏下</li>
 <li>如果行高小于高度  文字会  偏上</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*line-height 要设置在font属性下面，否则无效，例如：*/</span><br><span class="line">height: 80px;</span><br><span class="line">text-align: center;</span><br><span class="line">font: normal bold 30px &quot;宋体&quot;;</span><br><span class="line">line-height: 80px;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*line-height 要设置在font属性下面，否则无效，例如：*/</span><br><span class="hljs-attribute">height</span>: <span class="hljs-number">80px</span>;<br><span class="hljs-attribute">text-align</span>: center;<br><span class="hljs-attribute">font</span>: normal bold <span class="hljs-number">30px</span> <span class="hljs-string">&quot;宋体&quot;</span>;<br><span class="hljs-attribute">line-height</span>: <span class="hljs-number">80px</span>;<br></code></pre></td></tr></table></figure>
 
 <p>可以使用display:flex;布局方式让文字水平垂直居中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display: flex;</span><br><span class="line">align-items: center;     /* 侧轴对齐方式*/</span><br><span class="line">justify-content: center; /* 主轴对齐方式 */</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">display</span>: flex;<br><span class="hljs-attribute">align-items</span>: center;     <span class="hljs-comment">/* 侧轴对齐方式*/</span><br><span class="hljs-attribute">justify-content</span>: center; <span class="hljs-comment">/* 主轴对齐方式 */</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>「4. text-indent」</strong></p>
 <p>text-indent属性用于设置首行文本的缩进</p>
@@ -594,7 +765,7 @@
 <li>建议使用em作为设置单位。</li>
 <li>1em 就是一个字的宽度。如果是汉字的段落，1em 就是一个汉字的宽度</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">      /*行间距*/</span><br><span class="line">      line-height: 25px;</span><br><span class="line">      /*首行缩进2个字  em  1个em 就是1个字的大小*/</span><br><span class="line">      text-indent: 2em;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span> &#123;<br>      <span class="hljs-comment">/*行间距*/</span><br>      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">25px</span>;<br>      <span class="hljs-comment">/*首行缩进2个字  em  1个em 就是1个字的大小*/</span><br>      <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">2em</span>;  <br> &#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「5. text-decoration」</strong>文本的装饰</p>
 <p>text-decoration,通常我们用于给链接修改装饰效果</p>
@@ -746,13 +917,13 @@
 </tbody></table>
 <hr>
 <h2 id="CSS背景-background"><a href="#CSS背景-background" class="headerlink" title="CSS背景(background)"></a>CSS背景(background)</h2><p><strong>「1. 背景颜色」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: 颜色值;   默认的值是 transparent  透明的</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">color</span>: 颜色值;   默认的值是 <span class="hljs-built_in">transparent</span>  透明的<br></code></pre></td></tr></table></figure>
 
 <p><strong>「2. 背景图片(image)」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">background-image : none | url (url) ;</span><br><span class="line">例如:</span><br><span class="line">background-image: url(images/1.png);</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">语法：<br><span class="hljs-attribute">background-image</span> : none | url (url) ;<br>例如:<br>background-image: <span class="hljs-built_in">url</span>(<span class="hljs-string">images/1.png</span>);<br></code></pre></td></tr></table></figure>
 
 <p><strong>「3. 背景平铺（repeat）」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-repeat : repeat | no-repeat | repeat-x | repeat-y </span><br></pre></td></tr></table></figure>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coq">background-<span class="hljs-built_in">repeat</span> : <span class="hljs-built_in">repeat</span> | <span class="hljs-type">no</span>-<span class="hljs-built_in">repeat</span> | <span class="hljs-type">repeat</span>-x | <span class="hljs-type">repeat</span>-y <br></code></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -779,7 +950,7 @@
 </tr>
 </tbody></table>
 <p><strong>「4. 背景位置(position)」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background-position : length || length</span><br><span class="line">background-position : position || position </span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">position</span> : <span class="hljs-built_in">length</span> || <span class="hljs-built_in">length</span><br><span class="hljs-built_in">background</span>-<span class="hljs-built_in">position</span> : <span class="hljs-built_in">position</span> || <span class="hljs-built_in">position</span> <br></code></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -810,10 +981,10 @@
 <li>background：属性的值的书写顺序官方没有强制的标准。为了可读性，建议如下写：</li>
 <li>background: 背景颜色 背景图片地址 背景平铺 背景滚动 背景位置;</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 有背景图片背景颜色可以不用写*/</span><br><span class="line">background: transparent url(image.jpg) repeat-y  scroll center top ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 有背景图片背景颜色可以不用写*/</span><br><span class="hljs-attribute">background</span>: transparent <span class="hljs-built_in">url</span>(<span class="hljs-string">image.jpg</span>) repeat-y  scroll center top ;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「5. 背景半透明(CSS3)」</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: rgba(0, 0, 0, 0.3);</span><br><span class="line">background: rgba(0, 0, 0, .3);</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">background</span>: rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>.<span class="hljs-number">3</span>);<br><span class="hljs-attribute">background</span>: rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, .<span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>等同于background-color: rgba(0, 0, 0, .3)</li>
@@ -825,7 +996,7 @@
 <h5 id="盒子半透明-opacity"><a href="#盒子半透明-opacity" class="headerlink" title="盒子半透明 opacity"></a>盒子半透明 opacity</h5><ul>
 <li>设置opacity元素的所有后代元素会随着一起具有透明性，一般用于调整图片或者模块的整体不透明度</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opacity: .2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">opacity</span>: .<span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>
 
 <p><strong>「6. 背景总结」</strong></p>
 <table>
@@ -874,7 +1045,7 @@
 </tbody></table>
 <hr>
 <h2 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h2><p><strong>「1. CSS 层叠性」</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <p>-<code>概念</code>：</p>
 <ul>
 <li>所谓层叠性是指多种CSS样式的叠加</li>
@@ -886,7 +1057,7 @@
 <li>样式不冲突，不会层叠。</li>
 </ul>
 <p><strong>「2. CSS 继承性」</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">-<code>概念</code>：</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">-<code>概念</code>：</p>
 <ul>
 <li>子标签会继承父标签的某些样式，如文本颜色和字号。</li>
 <li>想要设置一个可继承的属性，只需将它应用于父元素即可。</li>
@@ -897,7 +1068,7 @@
 <li>子元素可以继承父元素的样式（<strong>text-，font-，line-这些元素开头的可以继承，以及color属性</strong>）</li>
 </ul>
 <p><strong>「3. CSS 优先级(CSS特殊性)」</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">-<code>概念</code>：定义CSS样式时，经常出现两个或更多规则应用在同一元素上，此时，</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">-<code>概念</code>：定义CSS样式时，经常出现两个或更多规则应用在同一元素上，此时，</p>
 <ul>
 <li>选择器相同，则执行层叠性</li>
 <li>选择器不同，就会出现优先级的问题。</li>
@@ -941,7 +1112,7 @@
 <li>div { color: pink !important; }</li>
 </ul>
 <p>-<code>权重叠加</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div ul  li   ------&gt;      0,0,0,3</span><br><span class="line">.nav ul li   ------&gt;      0,0,1,2</span><br><span class="line">a:hover      -----—&gt;      0,0,1,1</span><br><span class="line">.nav a       ------&gt;      0,0,1,1</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">ul</span>  <span class="hljs-selector-tag">li</span>   ------&gt;      <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span><br><span class="hljs-selector-class">.nav</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span>   ------&gt;      <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span><br><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>      -----—&gt;      <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span><br><span class="hljs-selector-class">.nav</span> <span class="hljs-selector-tag">a</span>       ------&gt;      <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 
 <p>-<code>继承的权重是0</code>：</p>
 <ul>
@@ -967,12 +1138,12 @@
 <p><strong>W3c标准盒子模型</strong></p>
 <p>标准 w3c 盒子模型的范围包括 margin、border、padding、content</p>
 <p>当设置为box-sizing: content-box;时，将采用标准模式解析计算，也是默认模式；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">内盒尺寸计算(元素实际大小)</span><br></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">内盒尺寸计算<span class="hljs-comment">(元素实际大小)</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>宽度：Element Height &#x3D; content height + padding + border （Height为内容高度）</li>
 <li>高度：Element  Width &#x3D; content width + padding + border （Width为内容宽度）</li>
-<li>盒子的实际大小：<strong>内容的宽度和高度 +  内边距  +  边框</strong>  <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><strong>IE盒子模型</strong></li>
+<li>盒子的实际大小：<strong>内容的宽度和高度 +  内边距  +  边框</strong>  <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><strong>IE盒子模型</strong></li>
 </ul>
 <p>IE 盒子模型的 content 部分包含了 border 和 pading</p>
 <p>当设置为box-sizing: border-box时，将采用怪异模式解析计算；</p>
@@ -1003,7 +1174,7 @@
 <li>dashed：边框为虚线</li>
 <li>dotted：边框为点线</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">边框综合设置</span><br><span class="line">border : border-width || border-style || border-color </span><br><span class="line"></span><br><span class="line">border: 1px solid red;  没有顺序要求  </span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs maxima">边框综合设置<br><span class="hljs-built_in">border</span> : <span class="hljs-built_in">border</span>-<span class="hljs-built_in">width</span> || <span class="hljs-built_in">border</span>-<span class="hljs-built_in">style</span> || <span class="hljs-built_in">border</span>-<span class="hljs-built_in">color</span> <br><br><span class="hljs-built_in">border</span>: 1px solid red;  没有顺序要求  <br></code></pre></td></tr></table></figure>
 
 <p><strong>盒子边框写法总结表：</strong></p>
 <p>很多情况下，我们不需要指定4个边框，我们是可以单独给4个边框分别指定的。</p>
@@ -1042,7 +1213,7 @@
 </tr>
 </tbody></table>
 <p><strong>表格的细线边框：</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ul>
 <li><p>通过表格的<code>cellspacing=&quot;0&quot;</code>,将单元格与单元格之间的距离设置为0，</p>
 </li>
@@ -1055,7 +1226,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"> table &#123;</span><br><span class="line">  width: 500px;</span><br><span class="line">  height: 300px;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line"> &#125;</span><br><span class="line"> td &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  text-align: center;</span><br><span class="line"> &#125;</span><br><span class="line"> table, td &#123;</span><br><span class="line">  border-collapse: collapse;  /*合并相邻边框*/</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css"> <span class="hljs-selector-tag">table</span> &#123;</span><br><span class="css">  <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;</span><br><span class="css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span><br><span class="css">  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;</span><br><span class="css"> &#125;</span><br><span class="css"> <span class="hljs-selector-tag">td</span> &#123;</span><br><span class="css">  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;</span><br><span class="css">  <span class="hljs-attribute">text-align</span>: center;</span><br><span class="css"> &#125;</span><br><span class="css"> <span class="hljs-selector-tag">table</span>, <span class="hljs-selector-tag">td</span> &#123;</span><br><span class="css">  <span class="hljs-attribute">border-collapse</span>: collapse;  <span class="hljs-comment">/*合并相邻边框*/</span></span><br><span class="css"> &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="2-内边距-padding"><a href="#2-内边距-padding" class="headerlink" title="2. 内边距(padding)"></a>2. 内边距(padding)</h3><p>padding属性用于设置内边距。是指边框与内容之间的距离。</p>
 <p><strong>设置</strong></p>
@@ -1148,7 +1319,7 @@
 <li>然后就给左右的外边距都设置为auto</li>
 </ul>
 <p>实际工作中常用这种方式进行网页布局，示例代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.header  &#123; width: 960px; margin: 0 auto;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.header</span>  &#123; <span class="hljs-attribute">width</span>: <span class="hljs-number">960px</span>; <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;&#125;<br></code></pre></td></tr></table></figure>
 
 <p>常见的写法，以下下三种都可以👇👇。</p>
 <ul>
@@ -1170,7 +1341,7 @@
 <ul>
 <li>行内元素为了照顾兼容性,尽量只设置左右内外边距，不要设置上下内外边距。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">   padding:0;         /* 清除内边距 */</span><br><span class="line">   margin:0;          /* 清除外边距 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">* &#123;<br>   <span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;         <span class="hljs-comment">/* 清除内边距 */</span><br>   <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;          <span class="hljs-comment">/* 清除外边距 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="4-外边距合并"><a href="#4-外边距合并" class="headerlink" title="4.外边距合并"></a>4.外边距合并</h3><p>使用margin定义块元素的<strong>「垂直外边距」</strong>时，可能会出现外边距的合并。</p>
 <h6 id="1-相邻块元素垂直外边距的合并"><a href="#1-相邻块元素垂直外边距的合并" class="headerlink" title="(1). 相邻块元素垂直外边距的合并"></a>(1). 相邻块元素垂直外边距的合并</h6><ul>
@@ -1178,13 +1349,13 @@
 <li>下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和</li>
 <li><strong>「取两个值中的较大者」</strong>这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</li>
 </ul>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><strong>「解决方案：尽量给只给一个盒子添加margin值」</strong>。</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><strong>「解决方案：尽量给只给一个盒子添加margin值」</strong>。</p>
 <h4 id="2-嵌套块元素垂直外边距的合并（塌陷）"><a href="#2-嵌套块元素垂直外边距的合并（塌陷）" class="headerlink" title="(2). 嵌套块元素垂直外边距的合并（塌陷）"></a>(2). 嵌套块元素垂直外边距的合并（塌陷）</h4><ul>
 <li>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框</li>
 <li>父元素的上外边距会与子元素的上外边距发生合并</li>
 <li>合并后的外边距为两者中的较大者</li>
 </ul>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><strong>「解决方案：」</strong></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><strong>「解决方案：」</strong></p>
 <ol>
 <li>可以为父元素定义上边框。</li>
 <li>可以为父元素定义上内边距</li>
@@ -1192,7 +1363,7 @@
 </ol>
 <p>还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。。。</p>
 <h4 id="盒子模型布局稳定性"><a href="#盒子模型布局稳定性" class="headerlink" title="盒子模型布局稳定性"></a>盒子模型布局稳定性</h4><p>优先使用  宽度 （width）  其次 使用内边距（padding）   再次  外边距（margin）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width &gt;  padding  &gt;   margin   </span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">width</span> &gt;  <span class="hljs-attribute">padding</span>  &gt;   <span class="hljs-attribute">margin</span>   <br></code></pre></td></tr></table></figure>
 
 <p><strong>原因：</strong></p>
 <ul>
@@ -1200,16 +1371,16 @@
 <li>padding  会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。</li>
 <li>width  没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</li>
 </ul>
-<h3 id="5-CSS3-新增"><a href="#5-CSS3-新增" class="headerlink" title="5. CSS3 新增"></a>5. CSS3 新增</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">圆角边框：</span><br><span class="line">border-radius:length;</span><br><span class="line"></span><br><span class="line">border-top-left-radius   定义了左上角的弧度</span><br><span class="line">border-top-right-radius   定义了右上角的弧度</span><br><span class="line">border-bottom-right-radius   定义了右下角的弧度</span><br><span class="line">border-bottom-left-radius   定义了左下角的弧度</span><br></pre></td></tr></table></figure>
+<h3 id="5-CSS3-新增"><a href="#5-CSS3-新增" class="headerlink" title="5. CSS3 新增"></a>5. CSS3 新增</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs maxima">圆角边框：<br><span class="hljs-built_in">border</span>-<span class="hljs-built_in">radius</span>:<span class="hljs-built_in">length</span>;<br><br><span class="hljs-built_in">border</span>-top-left-<span class="hljs-built_in">radius</span>   定义了左上角的弧度<br><span class="hljs-built_in">border</span>-top-right-<span class="hljs-built_in">radius</span>   定义了右上角的弧度<br><span class="hljs-built_in">border</span>-bottom-right-<span class="hljs-built_in">radius</span>   定义了右下角的弧度<br><span class="hljs-built_in">border</span>-bottom-left-<span class="hljs-built_in">radius</span>   定义了左下角的弧度<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>其中每一个值可以为 数值或百分比的形式。</li>
 <li>技巧：让一个正方形 变成圆圈</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 50%;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;<br></code></pre></td></tr></table></figure>
 
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">如果要在四个角上一一指定，可以使用以下规则👇👇：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 左上角 右上角  右下角  左下角;</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">如果要在四个角上一一指定，可以使用以下规则👇👇：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border-radius</span>: 左上角 右上角  右下角  左下角;<br></code></pre></td></tr></table></figure>
 
 <ol>
 <li>四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角。</li>
@@ -1217,7 +1388,7 @@
 <li>两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角</li>
 <li>一个值：四个圆角值相同</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">盒子阴影(box-shadow)：</span><br><span class="line">box-shadow: offset-x offset-y [blur [spread]] [color] [inset]</span><br></pre></td></tr></table></figure>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">盒子阴影(box-shadow)：<br>box-shadow: offset-x offset-y <span class="hljs-comment">[blur <span class="hljs-comment">[spread]</span>]</span> <span class="hljs-comment">[color]</span> <span class="hljs-comment">[inset]</span><br></code></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -1251,7 +1422,7 @@
 <td align="left">可选。表示添加内阴影，默认为外阴影</td>
 </tr>
 </tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">   width: 200px;</span><br><span class="line">   height: 200px;</span><br><span class="line">   border: 10px solid red;</span><br><span class="line">   /* box-shadow: 5px 5px 3px 4px rgba(0, 0, 0, .4);  */</span><br><span class="line">   /* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */</span><br><span class="line">   box-shadow: 0 15px 30px  rgba(0, 0, 0, .4);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>   <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;<br>   <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;<br>   <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid red;<br>   <span class="hljs-comment">/* box-shadow: 5px 5px 3px 4px rgba(0, 0, 0, .4);  */</span><br>   <span class="hljs-comment">/* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */</span><br>   <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">15px</span> <span class="hljs-number">30px</span>  <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, .<span class="hljs-number">4</span>);   <br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -1295,7 +1466,7 @@
 <li>浮动最早是用来控制图片，实现文字环绕图片效果。</li>
 <li>float属性会改变元素的display属性，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。生成的块级框和我们前面的行内块极其相似。</li>
 </ol>
-<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; float: 属性值; &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器 &#123; <span class="hljs-attribute">float</span>: 属性值; &#125;<br></code></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -1320,7 +1491,7 @@
 <blockquote>
 <p>浮动只会影响当前的或者是后面的标准流盒子，不会影响前面的标准流。<br>**建议:**如果一个盒子里面有多个子盒子，如果其中一个盒子浮动了，其他兄弟也应该浮动。防止引起问题</p>
 </blockquote>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <p><strong>浮动(float)小结</strong></p>
 <table>
 <thead>
@@ -1342,13 +1513,13 @@
 <td align="left"><strong>「特别注意」</strong>：浮动元素会改变display属性， 类似转换为了行内块，但是元素之间没有空白缝隙</td>
 </tr>
 </tbody></table>
-<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>因为父级盒子很多情况下，不方便给高度，但是子盒子浮动就不占有位置，最后父级盒子高度为0，就影响了下面的标准流盒子。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><strong>总结：</strong></p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>因为父级盒子很多情况下，不方便给高度，但是子盒子浮动就不占有位置，最后父级盒子高度为0，就影响了下面的标准流盒子。<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><strong>总结：</strong></p>
 <ul>
 <li>由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响</li>
 <li>准确地说，并不是清除浮动，而是清除浮动后造成的影响</li>
 </ul>
 <p><strong>清除浮动本质</strong>清除浮动主要为了解决父级元素因为子级浮动引起内部高度为0 的问题。清除浮动之后， 父级就会根据浮动的子盒子自动检测高度。父级有了高度，就不会影响下面的标准流了</p>
-<h4 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; clear: 属性值; &#125;   clear 清除  </span><br></pre></td></tr></table></figure>
+<h4 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器 &#123; <span class="hljs-attribute">clear</span>: 属性值; &#125;   <span class="hljs-attribute">clear</span> 清除  <br></code></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -1378,27 +1549,27 @@
 <li>缺点：添加许多无意义的标签，结构化较差。</li>
 </ul>
 <p><strong>2).父级添加overflow属性方法</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以给父级添加： overflow为 hidden| auto| scroll  都可以实现。</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">可以给父级添加： overflow为 hidden| <span class="hljs-keyword">auto</span>| scroll  都可以实现。<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>优点： 代码简洁</li>
 <li>缺点： 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。</li>
 </ul>
 <p><strong>3).使用after伪元素清除浮动</strong>:after 方式为空元素额外标签法的升级版，好处是不用单独加标签了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: block;</span><br><span class="line">    height: 0;</span><br><span class="line">    clear: both;</span><br><span class="line">    visibility: hidden;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">/* IE6、7 专有 */</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span>:after &#123;<br>    content: <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">clear</span>: both;<br>    <span class="hljs-attribute">visibility</span>: hidden;<br>&#125;<br>  <br><span class="hljs-comment">/* IE6、7 专有 */</span><br><span class="hljs-selector-class">.clearfix</span> &#123;<br>    *zoom: <span class="hljs-number">1</span>;<br>&#125;<br>    <br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>优点：符合闭合浮动思想  结构语义化正确</li>
 <li>缺点：由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</li>
 </ul>
 <p><strong>4).使用双伪元素清除浮动</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: table;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.clearfix &#123;</span><br><span class="line">   *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs dts">.clearfix:before,<br>.clearfix:<span class="hljs-class">after </span>&#123;<br><span class="hljs-symbol">    content:</span> <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-symbol">    display:</span> table;<br>&#125;<br><br>.clearfix:<span class="hljs-class">after </span>&#123;<br><span class="hljs-symbol">    clear:</span> both;<br>&#125;<br><br>.<span class="hljs-class">clearfix </span>&#123;<br>   *zoom: <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>优点： 代码更简洁</li>
 <li>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</li>
 </ul>
-<h4 id="清除浮动总结"><a href="#清除浮动总结" class="headerlink" title="清除浮动总结"></a>清除浮动总结</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">什么时候用清除浮动呢？</span><br></pre></td></tr></table></figure>
+<h4 id="清除浮动总结"><a href="#清除浮动总结" class="headerlink" title="清除浮动总结"></a>清除浮动总结</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">什么时候用清除浮动呢？<br></code></pre></td></tr></table></figure>
 
 <ol>
 <li>父级没高度</li>
@@ -1441,7 +1612,7 @@
 <li>文本属性：color &#x2F; font &#x2F; text-decoration &#x2F; text-align &#x2F; vertical-align &#x2F; white- space &#x2F; break-word</li>
 <li>其他属性（CSS3）：content &#x2F; cursor &#x2F; border-radius &#x2F; box-shadow &#x2F; text-shadow &#x2F; background:linear-gradient …</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.jdc &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    position: relative;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    margin: 0 10px;</span><br><span class="line">    padding: 20px 0;</span><br><span class="line">    font-family: Arial, &#x27;Helvetica Neue&#x27;, Helvetica, sans-serif;</span><br><span class="line">    color: #333;</span><br><span class="line">    background: rgba(0,0,0,.5);</span><br><span class="line">    -webkit-border-radius: 10px;</span><br><span class="line">    -moz-border-radius: 10px;</span><br><span class="line">    -o-border-radius: 10px;</span><br><span class="line">    -ms-border-radius: 10px;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.jdc</span> &#123;<br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">float</span>: left;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">font-family</span>: Arial, <span class="hljs-string">&#x27;Helvetica Neue&#x27;</span>, Helvetica, sans-serif;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;<br>    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">5</span>);<br>    -webkit-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;<br>    -moz-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;<br>    -o-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;<br>    -ms-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -1479,9 +1650,9 @@
 <td align="left"><strong>「右侧」</strong>偏移量，定义元素相对于其父元素<strong>「右边线的距离」</strong></td>
 </tr>
 </tbody></table>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <p><strong>「2. 定位模式(position)」</strong>在 CSS 中，通过 <code>position</code> 属性定义元素的<strong>「定位模式」</strong>，语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: 属性值; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器 &#123; <span class="hljs-attribute">position</span>: 属性值; &#125;<br></code></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -1515,7 +1686,7 @@
 </ul>
 <p><strong>「4. 相对定位(relative)」</strong></p>
 <ul>
-<li>相对定位是元素相对于它原来在标准流中的位置来说的。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></li>
+<li>相对定位是元素相对于它原来在标准流中的位置来说的。<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></li>
 <li>相对于自己原来在标准流中位置来移动的</li>
 <li>原来在标准流的区域继续占有，后面的盒子仍然以标准流的方式对待它。</li>
 </ul>
@@ -1525,8 +1696,8 @@
 <li>完全脱表–完全不占位置；</li>
 <li>父元素没有定位，则以浏览器为准定位(Document文档)。</li>
 </ul>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
-<h4 id="父元素有定位"><a href="#父元素有定位" class="headerlink" title="父元素有定位"></a>父元素有定位</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<h4 id="父元素有定位"><a href="#父元素有定位" class="headerlink" title="父元素有定位"></a>父元素有定位</h4><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <h5 id="定位口诀–子绝父相"><a href="#定位口诀–子绝父相" class="headerlink" title="定位口诀–子绝父相"></a>定位口诀–子绝父相</h5><p><strong>「6. 固定定位(fixed)」</strong></p>
 <p>固定定位是绝对定位的一种特殊形式;</p>
 <ul>
@@ -1543,7 +1714,7 @@
 <h3 id="定位-position-的扩展"><a href="#定位-position-的扩展" class="headerlink" title="定位(position)的扩展"></a>定位(position)的扩展</h3><h4 id="绝对定位的盒子居中"><a href="#绝对定位的盒子居中" class="headerlink" title="绝对定位的盒子居中"></a>绝对定位的盒子居中</h4><blockquote>
 <p>绝对定位&#x2F;固定定位的盒子不能通过设置margin: auto设置水平居中 在使用绝对定位时要向实现水平居中，可以按照下面的方法：</p>
 </blockquote>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ol>
 <li>left : 50%:让盒子的左侧移动到父级元素的水平中心位置；</li>
 <li>margin-left: -100px;让盒子向左移动自身宽度的一半。</li>
@@ -1552,7 +1723,7 @@
 <h4 id="堆叠顺序（z-index）"><a href="#堆叠顺序（z-index）" class="headerlink" title="堆叠顺序（z-index）"></a>堆叠顺序（z-index）</h4><p>在使用<strong>「定位」</strong>布局时，可能会<strong>「出现盒子重叠的情况」</strong>。</p>
 <p>加了定位的盒子，默认<strong>「后来者居上」</strong>， 后面的盒子会压住前面的盒子。</p>
 <p>应用 <code>z-index</code> 层叠等级属性可以<strong>「调整盒子的堆叠顺序」</strong>。如下图所示：</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">z-index的特性如下:</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">z-index的特性如下:</p>
 <ol>
 <li><strong>属性值</strong>：正整数、负整数或 0，默认值是 0，数值越大，盒子越靠上；</li>
 <li>如果属性值相同，则按照书写顺序，后来居上；</li>
@@ -1627,14 +1798,14 @@
 <li><p>display: block 除了转换为块级元素之外，同时还有显示元素的意思。</p>
 </li>
 </ul>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">实际开发场景：配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">实际开发场景：配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</p>
 <h4 id="1-2-visibility-可见性"><a href="#1-2-visibility-可见性" class="headerlink" title="1.2 visibility 可见性"></a>1.2 visibility 可见性</h4><p>设置或检索是否显示对象</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visibility：visible ;  对象可视</span><br><span class="line"></span><br><span class="line">visibility：hidden;    对象隐藏</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-attribute">visibility</span>：visible ;  对象可视<br><br><span class="hljs-attribute">visibility</span>：hidden;    对象隐藏<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>特点：隐藏之后，继续保留原有位置。</li>
 </ul>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <h4 id="1-3-overflow-溢出"><a href="#1-3-overflow-溢出" class="headerlink" title="1.3 overflow 溢出"></a>1.3 overflow 溢出</h4><p>检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</p>
 <table>
 <thead>
@@ -1660,7 +1831,7 @@
 <td align="left">超出自动显示滚动条，不超出不显示滚动条</td>
 </tr>
 </tbody></table>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><code>实际开发场景</code>：</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><code>实际开发场景</code>：</p>
 <ol>
 <li>清除浮动</li>
 <li>隐藏超出内容，隐藏掉,  不允许内容超过父盒子。</li>
@@ -1724,14 +1895,14 @@
 <td align="left">禁止</td>
 </tr>
 </tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li style=&quot;cursor:default&quot;&gt;我是小白&lt;/li&gt;</span><br><span class="line">  &lt;li style=&quot;cursor:pointer&quot;&gt;我是小手&lt;/li&gt;</span><br><span class="line">  &lt;li style=&quot;cursor:move&quot;&gt;我是移动&lt;/li&gt;</span><br><span class="line">  &lt;li style=&quot;cursor:text&quot;&gt;我是文本&lt;/li&gt;</span><br><span class="line">  &lt;li style=&quot;cursor:not-allowed&quot;&gt;我是文本&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs maxima">&lt;ul&gt;<br>  &lt;<span class="hljs-built_in">li</span> <span class="hljs-built_in">style</span>=<span class="hljs-string">&quot;cursor:default&quot;</span>&gt;我是小白&lt;/<span class="hljs-built_in">li</span>&gt;<br>  &lt;<span class="hljs-built_in">li</span> <span class="hljs-built_in">style</span>=<span class="hljs-string">&quot;cursor:pointer&quot;</span>&gt;我是小手&lt;/<span class="hljs-built_in">li</span>&gt;<br>  &lt;<span class="hljs-built_in">li</span> <span class="hljs-built_in">style</span>=<span class="hljs-string">&quot;cursor:move&quot;</span>&gt;我是移动&lt;/<span class="hljs-built_in">li</span>&gt;<br>  &lt;<span class="hljs-built_in">li</span> <span class="hljs-built_in">style</span>=<span class="hljs-string">&quot;cursor:text&quot;</span>&gt;我是文本&lt;/<span class="hljs-built_in">li</span>&gt;<br>  &lt;<span class="hljs-built_in">li</span> <span class="hljs-built_in">style</span>=<span class="hljs-string">&quot;cursor:not-allowed&quot;</span>&gt;我是文本&lt;/<span class="hljs-built_in">li</span>&gt;<br>&lt;/ul&gt;<br></code></pre></td></tr></table></figure>
 
-<h4 id="2-2-轮廓线-outline"><a href="#2-2-轮廓线-outline" class="headerlink" title="2.2 轮廓线 outline"></a>2.2 轮廓线 outline</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">outline : outline-color ||outline-style || outline-width </span><br></pre></td></tr></table></figure>
+<h4 id="2-2-轮廓线-outline"><a href="#2-2-轮廓线-outline" class="headerlink" title="2.2 轮廓线 outline"></a>2.2 轮廓线 outline</h4><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">outline : outline-<span class="hljs-built_in">color</span> ||outline-<span class="hljs-built_in">style</span> || outline-<span class="hljs-built_in">width</span> <br></code></pre></td></tr></table></figure>
 
 <p>但是我们都不关心可以设置多少，我们平时都是去掉的。<br>最直接的写法是 ： outline: 0;  或者  outline: none;</p>
-<h4 id="2-3-防止拖拽文本域resize"><a href="#2-3-防止拖拽文本域resize" class="headerlink" title="2.3 防止拖拽文本域resize"></a>2.3 防止拖拽文本域resize</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea  style=&quot;resize: none;&quot;&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-防止拖拽文本域resize"><a href="#2-3-防止拖拽文本域resize" class="headerlink" title="2.3 防止拖拽文本域resize"></a>2.3 防止拖拽文本域resize</h4><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>  <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;resize: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="2-4-用户界面样式总结"><a href="#2-4-用户界面样式总结" class="headerlink" title="2.4 用户界面样式总结"></a>2.4 用户界面样式总结</h4><table>
 <thead>
@@ -1762,48 +1933,48 @@
 <li>让文字居中对齐，是 text-align: center;</li>
 </ul>
 <p>vertical-align 垂直对齐，它只针对于<strong>「行内元素」</strong>或者<strong>「行内块元素」</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置或检索对象内容的垂直对其方式。</span><br><span class="line">vertical-align : baseline |top |middle |bottom </span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs coq">设置或检索对象内容的垂直对其方式。<br>vertical-align : baseline |<span class="hljs-type">top</span> |<span class="hljs-type">middle</span> |<span class="hljs-type">bottom</span> <br></code></pre></td></tr></table></figure>
 
 <p>注意：</p>
 <p>vertical-align 不影响块级元素中的内容对齐，它只针对于<strong>「行内元素」</strong>或者<strong>「行内块元素」</strong>，</p>
 <p>特别是行内块元素， 通常用来控制图片&#x2F;表单与文字的对齐。</p>
 <h4 id="3-1-图片、表单和文字对齐"><a href="#3-1-图片、表单和文字对齐" class="headerlink" title="3.1 图片、表单和文字对齐"></a>3.1 图片、表单和文字对齐</h4><p>我们可以通过<code>vertical-align</code> 控制图片和文字的垂直关系了。默认的图片会和文字基线对齐。</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
-<h4 id="3-2-去除图片底侧空白缝隙"><a href="#3-2-去除图片底侧空白缝隙" class="headerlink" title="3.2 去除图片底侧空白缝隙"></a>3.2 去除图片底侧空白缝隙</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"><strong>原因：</strong>图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<h4 id="3-2-去除图片底侧空白缝隙"><a href="#3-2-去除图片底侧空白缝隙" class="headerlink" title="3.2 去除图片底侧空白缝隙"></a>3.2 去除图片底侧空白缝隙</h4><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"><strong>原因：</strong>图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。</p>
 <p>就是图片底侧会有一个空白缝隙。</p>
 <p><strong>解决方法：</strong></p>
 <ul>
 <li>给img vertical-align:middle | top| bottom等等。 让图片不要和基线对齐。</li>
 </ul>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ul>
 <li>给img 添加 display：block; 转换为块级元素就不会存在问题了。</li>
 </ul>
 <h3 id="溢出的文字省略号显示"><a href="#溢出的文字省略号显示" class="headerlink" title="溢出的文字省略号显示"></a>溢出的文字省略号显示</h3><h4 id="4-1-white-space"><a href="#4-1-white-space" class="headerlink" title="4.1 white-space"></a>4.1 white-space</h4><ul>
 <li>white-space设置或检索对象内文本显示方式。通常我们使用于强制一行显示内容</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">white-space:normal ；默认处理方式</span><br><span class="line"></span><br><span class="line">white-space:nowrap ； 强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">white-<span class="hljs-literal">space</span>:<span class="hljs-keyword">normal</span> ；默认处理方式<br><br>white-<span class="hljs-literal">space</span>:nowrap ； 强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。<br></code></pre></td></tr></table></figure>
 
 <h4 id="4-2-text-overflow-文字溢出"><a href="#4-2-text-overflow-文字溢出" class="headerlink" title="4.2 text-overflow 文字溢出"></a>4.2 text-overflow 文字溢出</h4><ul>
 <li>设置或检索是否使用一个省略标记（…）标示对象内文本的溢出</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">text-overflow : clip ；不显示省略标记（...），而是简单的裁切 </span><br><span class="line"></span><br><span class="line">text-overflow：ellipsis ； 当对象内文本溢出时显示省略标记（...）</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino">text-overflow : clip ；不显示省略标记（...），而是简单的裁切 <br><br>text-overflow：ellipsis ； 当对象内文本溢出时显示省略标记（...）<br></code></pre></td></tr></table></figure>
 
 <p><strong>「注意」</strong>：</p>
 <p>一定要首先强制一行内显示，再次和overflow属性  搭配使用</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
-<h4 id="4-3-总结三步曲"><a href="#4-3-总结三步曲" class="headerlink" title="4.3 总结三步曲"></a>4.3 总结三步曲</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*1. 先强制一行内显示文本*/</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">/*2. 超出的部分隐藏*/</span><br><span class="line">    overflow: hidden;</span><br><span class="line">/*3. 文字用省略号替代超出的部分*/</span><br><span class="line">    text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<h4 id="4-3-总结三步曲"><a href="#4-3-总结三步曲" class="headerlink" title="4.3 总结三步曲"></a>4.3 总结三步曲</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*1. 先强制一行内显示文本*/</span><br>    <span class="hljs-attribute">white-space</span>: nowrap;<br><span class="hljs-comment">/*2. 超出的部分隐藏*/</span><br>    <span class="hljs-attribute">overflow</span>: hidden;<br><span class="hljs-comment">/*3. 文字用省略号替代超出的部分*/</span><br>    <span class="hljs-attribute">text-overflow</span>: ellipsis;<br></code></pre></td></tr></table></figure>
 
-<h3 id="CSS精灵技术（sprite"><a href="#CSS精灵技术（sprite" class="headerlink" title="CSS精灵技术（sprite)"></a>CSS精灵技术（sprite)</h3><p>CSS精灵技术（也称CSS Sprites、CSS雪碧）。<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<h3 id="CSS精灵技术（sprite"><a href="#CSS精灵技术（sprite" class="headerlink" title="CSS精灵技术（sprite)"></a>CSS精灵技术（sprite)</h3><p>CSS精灵技术（也称CSS Sprites、CSS雪碧）。<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ul>
 <li>图所示为网页的请求原理图，当用户访问一个网站时，需要向服务器发送请求，网页上的每张图像都要经过一次请求才能展现给用户。</li>
 <li>然而，一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接受和发送请求，这将大大降低页面的加载速度。</li>
 </ul>
 <p><strong>为什么需要精灵技术</strong>：为了有效地减少服务器接受和发送请求的次数，提高页面的加载速度。</p>
 <h4 id="5-1-精灵技术讲解"><a href="#5-1-精灵技术讲解" class="headerlink" title="5.1 精灵技术讲解"></a>5.1 精灵技术讲解</h4><p>CSS 精灵其实是将网页中的一些背景图像整合到一张大图中（精灵图），然而，各个网页元素通常只需要精灵图中不同位置的某个小图，要想精确定位到精灵图中的某个小图。</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">这样，当用户访问该页面时，只需向服务发送一次请求，网页中的背景图像即可全部展示出来。</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">这样，当用户访问该页面时，只需向服务发送一次请求，网页中的背景图像即可全部展示出来。</p>
 <p>我们需要使用CSS的:</p>
 <ul>
 <li>background-image、</li>
@@ -1816,12 +1987,12 @@
 <li>精确测量，每个小背景图片的大小和 位置。</li>
 <li>给盒子指定小背景图片时， 背景定位基本都是 负值。</li>
 </ol>
-<h3 id="滑动门"><a href="#滑动门" class="headerlink" title="滑动门"></a>滑动门</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<h3 id="滑动门"><a href="#滑动门" class="headerlink" title="滑动门"></a>滑动门</h3><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <h4 id="6-1-滑动门出现的背景"><a href="#6-1-滑动门出现的背景" class="headerlink" title="6.1 滑动门出现的背景"></a>6.1 滑动门出现的背景</h4><p>制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，咋办？</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。最常见于各种导航栏的滑动门。</p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片">为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。最常见于各种导航栏的滑动门。</p>
 <h4 id="6-2-核心技术"><a href="#6-2-核心技术" class="headerlink" title="6.2 核心技术"></a>6.2 核心技术</h4><p>核心技术就是利用<code>CSS精灵</code>（主要是背景位置）和 <code>盒子padding</code>撑开宽度, 以便能适应不同字数的导航栏。</p>
 <p>一般的经典布局都是这样的：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;</span><br><span class="line">  &lt;a href=&quot;#&quot;&gt;</span><br><span class="line">    &lt;span&gt;导航栏内容&lt;/span&gt;</span><br><span class="line">  &lt;/a&gt;</span><br><span class="line">&lt;/li&gt;</span><br><span class="line">* &#123;</span><br><span class="line">    padding:0;</span><br><span class="line">    margin:0;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">    body&#123;</span><br><span class="line">      background: url(images/wx.jpg) repeat-x;</span><br><span class="line">    &#125;</span><br><span class="line">    .father &#123;</span><br><span class="line">      padding-top:20px;</span><br><span class="line">    &#125;</span><br><span class="line">    li &#123;</span><br><span class="line">      padding-left: 16px;</span><br><span class="line">      height: 33px;</span><br><span class="line">      float: left;</span><br><span class="line">      line-height: 33px;</span><br><span class="line">      margin:0  10px;</span><br><span class="line">      background: url(./images/to.png) no-repeat left ;</span><br><span class="line">    &#125;</span><br><span class="line">    a &#123;</span><br><span class="line">      padding-right: 16px;</span><br><span class="line">      height: 33px;</span><br><span class="line">      display: inline-block;</span><br><span class="line">      color:#fff;</span><br><span class="line">      background: url(./images/to.png) no-repeat right ;</span><br><span class="line">      text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    li:hover,</span><br><span class="line">    li:hover a &#123;</span><br><span class="line">      background-image:url(./images/ao.png);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-params">&lt;li&gt;</span><br>  <span class="hljs-params">&lt;a href=&quot;#&quot;&gt;</span><br>    <span class="hljs-params">&lt;span&gt;</span>导航栏内容<span class="hljs-params">&lt;/span&gt;</span><br>  <span class="hljs-params">&lt;/a&gt;</span><br><span class="hljs-params">&lt;/li&gt;</span><br>* &#123;<br><span class="hljs-symbol">    padding:</span><span class="hljs-number">0</span>;<br><span class="hljs-symbol">    margin:</span><span class="hljs-number">0</span>;<br><br>   &#125;<br>    body&#123;<br><span class="hljs-symbol">      background:</span> url(images/wx.jpg) repeat-x;<br>    &#125;<br>    .<span class="hljs-class">father </span>&#123;<br>      padding-top:<span class="hljs-number">20</span>px;<br>    &#125;<br>    <span class="hljs-class">li </span>&#123;<br>      padding-left: <span class="hljs-number">16</span>px;<br><span class="hljs-symbol">      height:</span> <span class="hljs-number">33</span>px;<br><span class="hljs-symbol">      float:</span> left;<br>      line-height: <span class="hljs-number">33</span>px;<br><span class="hljs-symbol">      margin:</span><span class="hljs-number">0</span>  <span class="hljs-number">10</span>px;<br><span class="hljs-symbol">      background:</span> url(.<span class="hljs-meta-keyword">/images/</span>to.png) no-repeat left ;<br>    &#125;<br>    <span class="hljs-class">a </span>&#123;<br>      padding-right: <span class="hljs-number">16</span>px;<br><span class="hljs-symbol">      height:</span> <span class="hljs-number">33</span>px;<br><span class="hljs-symbol">      display:</span> inline-block;<br><span class="hljs-symbol">      color:</span><span class="hljs-meta">#fff;</span><br><span class="hljs-symbol">      background:</span> url(.<span class="hljs-meta-keyword">/images/</span>to.png) no-repeat right ;<br>      text-decoration: none;<br>    &#125;<br><span class="hljs-symbol">    li:</span>hover,<br><span class="hljs-symbol">    li:</span>hover <span class="hljs-class">a </span>&#123;<br>      background-image:url(.<span class="hljs-meta-keyword">/images/</span>ao.png);<br>    &#125;<br></code></pre></td></tr></table></figure>
 
 <p>总结：</p>
 <ol>
@@ -1829,63 +2000,484 @@
 <li>span 设置背景右侧， padding撑开合适宽度 剩下由文字继续撑开宽度。</li>
 <li>之所以a包含span就是因为 整个导航都是可以点击的。</li>
 </ol>
-<h3 id="CSS-三角形"><a href="#CSS-三角形" class="headerlink" title="CSS 三角形"></a>CSS 三角形</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line"></span><br><span class="line">    width: 0; </span><br><span class="line"></span><br><span class="line">    height: 0;</span><br><span class="line">    line-height:0；</span><br><span class="line">    font-size: 0;</span><br><span class="line">   border-top: 10px solid red;</span><br><span class="line"></span><br><span class="line">   border-right: 10px solid green;</span><br><span class="line"></span><br><span class="line">   border-bottom: 10px solid blue;</span><br><span class="line"></span><br><span class="line">   border-left: 10px solid #000; </span><br><span class="line"></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS-三角形"><a href="#CSS-三角形" class="headerlink" title="CSS 三角形"></a>CSS 三角形</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br><br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>; <br><br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">line-height</span>:<span class="hljs-number">0</span>；<br>    font-size: <span class="hljs-number">0</span>;<br>   <span class="hljs-attribute">border-top</span>: <span class="hljs-number">10px</span> solid red;<br><br>   <span class="hljs-attribute">border-right</span>: <span class="hljs-number">10px</span> solid green;<br><br>   <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">10px</span> solid blue;<br><br>   <span class="hljs-attribute">border-left</span>: <span class="hljs-number">10px</span> solid <span class="hljs-number">#000</span>; <br><br>     &#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p>
+<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ol>
 <li>我们用css 边框可以模拟三角效果</li>
 <li>宽度高度为0</li>
 <li>我们4个边框都要写， 只保留需要的边框颜色，其余的不能省略，都改为 transparent 透明就好了</li>
 <li>为了照顾兼容性 低版本的浏览器，加上 font-size: 0;  line-height: 0;</li>
 </ol>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">小城故事</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.xindong350.top/2022/01/02/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8DCSS%E5%9F%BA%E7%A1%80/">https://www.xindong350.top/2022/01/02/学习笔记/「学习笔记」CSS基础/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.xindong350.top" target="_blank">小城故事</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/">前端经验</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___pic1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://s3.bmp.ovh/imgs/2022/01/2910c6202194059b.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/01/2910c6202194059b.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://s3.bmp.ovh/imgs/2022/01/15be777e1f97bd59.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/01/15be777e1f97bd59.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8DHTML%E5%9F%BA%E7%A1%80/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___www.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">「学习笔记」HTML基础</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/03/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/HTML%E4%B8%8ECSS%E8%BF%9B%E9%98%B6/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___pic1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HTML与CSS进阶</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CSS%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8/" title="CSS属性大全"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___pic1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-30</div><div class="title">CSS属性大全</div></div></a></div><div><a href="/2021/08/02/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CSS%E7%AC%94%E8%AE%B0/" title="CSS笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___pic1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">CSS笔记</div></div></a></div><div><a href="/2022/01/03/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/HTML%E4%B8%8ECSS%E8%BF%9B%E9%98%B6/" title="HTML与CSS进阶"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/src=http___pic1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-03</div><div class="title">HTML与CSS进阶</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/web-xc/iMG@main/5d7ec38e17bd491e.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小城故事</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://tenapi.cn/qqzlk/?qq=2848141597" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://s3.bmp.ovh/imgs/2022/01/2910c6202194059b.jpg" target="_blank" title="微信"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://github.com/web-xc" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8DCSS%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">「学习笔记」CSS基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E6%9E%84%E9%80%A0%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">CSS构造块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5CSS%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">引入CSS样式表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">CSS基础选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%BD%9C%E7%94%A8"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">CSS选择器作用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">CSS基础选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.3.2.</span> <span class="toc-text">CSS复合选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%B7%A5%E4%BD%9C%E4%B8%AD%EF%BC%8C%E5%BE%88%E5%B0%91%E5%86%99%E5%85%A8%E5%9B%9B%E4%B8%AA%E7%8A%B6%E6%80%81%EF%BC%8C%E4%B8%80%E8%88%AC%E5%86%99%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-number">1.3.2.0.1.</span> <span class="toc-text">实际工作中，很少写全四个状态，一般写法如下：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">CSS字体样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#font%E5%AD%97%E4%BD%93"><span class="toc-number">1.4.1.</span> <span class="toc-text">font字体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">单位</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E5%A4%96%E8%A7%82%E5%B1%9E%E6%80%A7"><span class="toc-number">1.4.2.</span> <span class="toc-text">CSS外观属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E9%AB%98%E6%B5%8B%E9%87%8F"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">行高测量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E9%AB%98%E4%B8%8E%E9%AB%98%E5%BA%A6%E7%9A%84%E4%B8%89%E7%A7%8D%E5%85%B3%E7%B3%BB"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">行高与高度的三种关系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F-display"><span class="toc-number">1.5.</span> <span class="toc-text">标签显示模式(display)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E8%BD%AC%E6%8D%A2-display"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">标签显示模式转换 display</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">~、、、、、等，其中标签是最典型的块元素。
-</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">2.0.0.0.0.1.</span> <span class="toc-text">、、、、、等，其中标签是最典型的块元素。
-</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text">块级元素的特点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.0.0.0.2.</span> <span class="toc-text">行内元素的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">2.0.0.0.2.1.</span> <span class="toc-text">注意</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">三种模式总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E8%83%8C%E6%99%AF-background"><span class="toc-number">2.1.</span> <span class="toc-text">CSS背景(background)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">注意：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%AE%80%E5%86%99%EF%BC%9A"><span class="toc-number">2.1.0.2.</span> <span class="toc-text">背景简写：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E5%8D%8A%E9%80%8F%E6%98%8E-opacity"><span class="toc-number">2.1.0.2.1.</span> <span class="toc-text">盒子半透明 opacity</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">2.2.</span> <span class="toc-text">CSS三大特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-Box-Model"><span class="toc-number">2.3.1.</span> <span class="toc-text">1. 盒子模型(Box Model)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9B%92%E5%AD%90%E8%BE%B9%E6%A1%86-border"><span class="toc-number">2.3.2.</span> <span class="toc-text">2. 盒子边框(border)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%86%85%E8%BE%B9%E8%B7%9D-padding"><span class="toc-number">2.3.3.</span> <span class="toc-text">2. 内边距(padding)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%96%E8%BE%B9%E8%B7%9D%EF%BC%88margin%EF%BC%89"><span class="toc-number">2.3.4.</span> <span class="toc-text">3. 外边距（margin）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6"><span class="toc-number">2.3.5.</span> <span class="toc-text">4.外边距合并</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E7%9A%84%E5%90%88%E5%B9%B6"><span class="toc-number">2.3.5.0.0.1.</span> <span class="toc-text">(1). 相邻块元素垂直外边距的合并</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B5%8C%E5%A5%97%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E7%9A%84%E5%90%88%E5%B9%B6%EF%BC%88%E5%A1%8C%E9%99%B7%EF%BC%89"><span class="toc-number">2.3.5.1.</span> <span class="toc-text">(2). 嵌套块元素垂直外边距的合并（塌陷）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%B8%83%E5%B1%80%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">2.3.5.2.</span> <span class="toc-text">盒子模型布局稳定性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CSS3-%E6%96%B0%E5%A2%9E"><span class="toc-number">2.3.6.</span> <span class="toc-text">5. CSS3 新增</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8"><span class="toc-number">2.4.</span> <span class="toc-text">浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8-1"><span class="toc-number">2.4.1.</span> <span class="toc-text">浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-number">2.4.1.0.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">2.4.1.0.2.</span> <span class="toc-text">语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="toc-number">2.4.2.</span> <span class="toc-text">清除浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.4.2.1.</span> <span class="toc-text">清除浮动的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%80%BB%E7%BB%93"><span class="toc-number">2.4.2.2.</span> <span class="toc-text">清除浮动总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E5%B1%9E%E6%80%A7%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="toc-number">2.4.3.</span> <span class="toc-text">CSS属性书写顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D-position"><span class="toc-number">2.5.</span> <span class="toc-text">定位(position)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B6%E5%85%83%E7%B4%A0%E6%9C%89%E5%AE%9A%E4%BD%8D"><span class="toc-number">2.5.0.1.</span> <span class="toc-text">父元素有定位</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E5%8F%A3%E8%AF%80%E2%80%93%E5%AD%90%E7%BB%9D%E7%88%B6%E7%9B%B8"><span class="toc-number">2.5.0.1.1.</span> <span class="toc-text">定位口诀–子绝父相</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D-position-%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-number">2.5.1.</span> <span class="toc-text">定位(position)的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%9B%92%E5%AD%90%E5%B1%85%E4%B8%AD"><span class="toc-number">2.5.1.1.</span> <span class="toc-text">绝对定位的盒子居中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E9%A1%BA%E5%BA%8F%EF%BC%88z-index%EF%BC%89"><span class="toc-number">2.5.1.2.</span> <span class="toc-text">堆叠顺序（z-index）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E6%94%B9%E5%8F%98display%E5%B1%9E%E6%80%A7"><span class="toc-number">2.5.1.3.</span> <span class="toc-text">定位改变display属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E5%B0%8F%E7%BB%93"><span class="toc-number">2.5.1.4.</span> <span class="toc-text">定位小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7"><span class="toc-number">2.6.</span> <span class="toc-text">CSS高级技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F"><span class="toc-number">2.6.1.</span> <span class="toc-text">元素的显示与隐藏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-display-%E6%98%BE%E7%A4%BA%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">2.6.1.1.</span> <span class="toc-text">1.1 display 显示（重点）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-visibility-%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="toc-number">2.6.1.2.</span> <span class="toc-text">1.2 visibility 可见性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-overflow-%E6%BA%A2%E5%87%BA"><span class="toc-number">2.6.1.3.</span> <span class="toc-text">1.3 overflow 溢出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F%E6%80%BB%E7%BB%93"><span class="toc-number">2.6.1.4.</span> <span class="toc-text">1.4 显示与隐藏总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.6.2.</span> <span class="toc-text">CSS用户界面样式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E9%BC%A0%E6%A0%87%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.6.2.1.</span> <span class="toc-text">2.1 鼠标样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E8%BD%AE%E5%BB%93%E7%BA%BF-outline"><span class="toc-number">2.6.2.2.</span> <span class="toc-text">2.2 轮廓线 outline</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E9%98%B2%E6%AD%A2%E6%8B%96%E6%8B%BD%E6%96%87%E6%9C%AC%E5%9F%9Fresize"><span class="toc-number">2.6.2.3.</span> <span class="toc-text">2.3 防止拖拽文本域resize</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%A0%B7%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-number">2.6.2.4.</span> <span class="toc-text">2.4 用户界面样式总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vertical-align-%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90"><span class="toc-number">2.6.3.</span> <span class="toc-text">vertical-align 垂直对齐</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%9B%BE%E7%89%87%E3%80%81%E8%A1%A8%E5%8D%95%E5%92%8C%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90"><span class="toc-number">2.6.3.1.</span> <span class="toc-text">3.1 图片、表单和文字对齐</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%8E%BB%E9%99%A4%E5%9B%BE%E7%89%87%E5%BA%95%E4%BE%A7%E7%A9%BA%E7%99%BD%E7%BC%9D%E9%9A%99"><span class="toc-number">2.6.3.2.</span> <span class="toc-text">3.2 去除图片底侧空白缝隙</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%A2%E5%87%BA%E7%9A%84%E6%96%87%E5%AD%97%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA"><span class="toc-number">2.6.4.</span> <span class="toc-text">溢出的文字省略号显示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-white-space"><span class="toc-number">2.6.4.1.</span> <span class="toc-text">4.1 white-space</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-text-overflow-%E6%96%87%E5%AD%97%E6%BA%A2%E5%87%BA"><span class="toc-number">2.6.4.2.</span> <span class="toc-text">4.2 text-overflow 文字溢出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%80%BB%E7%BB%93%E4%B8%89%E6%AD%A5%E6%9B%B2"><span class="toc-number">2.6.4.3.</span> <span class="toc-text">4.3 总结三步曲</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E7%B2%BE%E7%81%B5%E6%8A%80%E6%9C%AF%EF%BC%88sprite"><span class="toc-number">2.6.5.</span> <span class="toc-text">CSS精灵技术（sprite)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E7%B2%BE%E7%81%B5%E6%8A%80%E6%9C%AF%E8%AE%B2%E8%A7%A3"><span class="toc-number">2.6.5.1.</span> <span class="toc-text">5.1 精灵技术讲解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E7%B2%BE%E7%81%B5%E6%8A%80%E6%9C%AF%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%BB%E7%BB%93"><span class="toc-number">2.6.5.2.</span> <span class="toc-text">5.2 精灵技术使用的核心总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E9%97%A8"><span class="toc-number">2.6.6.</span> <span class="toc-text">滑动门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E6%BB%91%E5%8A%A8%E9%97%A8%E5%87%BA%E7%8E%B0%E7%9A%84%E8%83%8C%E6%99%AF"><span class="toc-number">2.6.6.1.</span> <span class="toc-text">6.1 滑动门出现的背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF"><span class="toc-number">2.6.6.2.</span> <span class="toc-text">6.2 核心技术</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">2.6.7.</span> <span class="toc-text">CSS 三角形</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 小城故事</div><div class="framework-info"><span> </span><a href="https://www.xindong350.top">向海风许愿</a><span class="footer-separator">|</span><span> </span><a target="_blank" rel="noopener" href="https://github.com/web-xc">在山海相见</a><div id="running-time"></div></div><script>setInterval(()=>{let create_time=Math.round(new Date('2020-11-21 01:35:06').getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);</script><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/web-xc"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
-  function initValine () {
-    const valine = new Valine(Object.assign({
-      el: '#vcomment',
-      appId: 'soLEt6zsXGnOFyhg4CvNDmGT-gzGzoHsz',
-      appKey: 'YbnaGuSMQARpiI6mK7VksrCj',
-      avatar: 'monsterid',
-      serverURLs: '',
-      emojiMaps: "",
-      path: window.location.pathname,
-      visitor: true
-    }, null))
-  }
 
-  if (typeof Valine === 'function') initValine() 
-  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
-}
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
 
-if ('Valine' === 'Valine' || !false) {
-  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
-  else setTimeout(loadValine, 0)
-} else {
-  function loadOtherComment () {
-    loadValine()
-  }
-}</script></div><script src="js/icon.js"></script><script src="https://www.xindong350.top/My-blog-CSS/展开.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = true;
-document.body.addEventListener('input', POWERMODE);
-</script><script src="//code.tidio.co/oh92oyjuxp75lx6cazqnrr6es1jt68uy.js" async="async"></script><script>function onTidioChatApiReady() {
-  window.tidioChatApi.hide();
-  window.tidioChatApi.on("close", function() {
-    window.tidioChatApi.hide();
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/" class="category-chain-item">前端经验</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/">#前端经验</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>「学习笔记」CSS基础</div>
+      <div>https://www.xindong350.top/2022/01/02/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8DCSS%E5%9F%BA%E7%A1%80/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>小城故事</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年1月2日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/01/03/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/HTML%E4%B8%8ECSS%E8%BF%9B%E9%98%B6/" title="HTML与CSS进阶">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HTML与CSS进阶</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/01/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8DHTML%E5%9F%BA%E7%A1%80/" title="「学习笔记」HTML基础">
+                        <span class="hidden-mobile">「学习笔记」HTML基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Copyright © 2021</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>小城故事</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      鄂ICP证20210314号
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=20210314"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>鄂公网安备20210314号</span>
+        </a>
+      </span>
+    
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var title = subtitle.title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.staticfile.org/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
   });
-}
-if (window.tidioChatApi) {
-  window.tidioChatApi.on("ready", onTidioChatApiReady);
-} else {
-  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
-}
+</script>
 
-var chatBtnFn = () => {
-  document.getElementById("chat_btn").addEventListener("click", function(){
-    window.tidioChatApi.show();
-    window.tidioChatApi.open();
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.staticfile.org/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
   });
-}
-chatBtnFn()
-</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
