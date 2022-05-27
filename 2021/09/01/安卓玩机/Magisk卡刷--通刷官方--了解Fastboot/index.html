@@ -1,24 +1,24 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang=zh>
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
   
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="小城故事">
-  <meta name="keywords" content="小城故事，小城，小陈故事，小城&amp;故事">
   
-    <meta name="description" content="root，类似于Windows系统中的Administrator，root是Linux系统中的超级管理员用户帐户，该帐户拥有整个系统的最高权限，可方便地对于系统的部件进行删除或更改。   本教程正常情况无需双清或重装系统，可以进行OTA升级。升级后重复教程即可重新root。但还是要记得备份数据后进行以下操作。注：刷机有风险，玩机需谨慎。 操作不当所造成后果，与我无瓜  开始教程解锁手机bl锁大部">
+  <title>Magisk卡刷--通刷官方--了解Fastboot | 小城故事 欢迎您！</title>
+  <meta name="description" content="root，类似于Windows系统中的Administrator，root是Linux系统中的超级管理员用户帐户，该帐户拥有整个系统的最高权限，可方便地对于系统的部件进行删除或更改。   本教程正常情况无需双清或重装系统，可以进行OTA升级。升级后重复教程即可重新root。但还是要记得备份数据后进行以下操作。注：刷机有风险，玩机需谨慎。 操作不当所造成后果，与我无瓜  开始教程解锁手机bl锁大部">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Magisk卡刷--通刷官方--了解Fastboot">
 <meta property="og:url" content="https://www.xindong350.top/2021/09/01/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/Magisk%E5%8D%A1%E5%88%B7--%E9%80%9A%E5%88%B7%E5%AE%98%E6%96%B9--%E4%BA%86%E8%A7%A3Fastboot/index.html">
@@ -83,52 +83,24 @@
 <meta property="article:modified_time" content="2022-03-28T05:59:29.600Z">
 <meta property="article:author" content="小城故事">
 <meta property="article:tag" content="安卓玩机">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s4.ax1x.com/2022/01/23/75SqCn.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.xindong350.top/2021/09/01/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/Magisk%E5%8D%A1%E5%88%B7--%E9%80%9A%E5%88%B7%E5%AE%98%E6%96%B9--%E4%BA%86%E8%A7%A3Fastboot/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="小城故事" type="application/atom+xml">
   
   
-  <title>Magisk卡刷--通刷官方--了解Fastboot - 小城故事</title>
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
+<link rel="stylesheet" href="/css/style.css">
 
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.xindong350.top","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
   
 <!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
@@ -136,202 +108,337 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head>
 
 
-<body>
+<body class="main-center theme-blue" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://www.xindong350.top" target="_blank">
+          <img class="img-circle img-rotate" src="/" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">小城故事</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 中国-湖北</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/link">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://tenapi.cn/qqzlk/?qq=2848141597" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+        <li><a href="https://s3.bmp.ovh/imgs/2022/01/2910c6202194059b.jpg" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="https://github.com/web-xc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
   
-
-  <header>
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
     
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>小城故事</strong>
-    </a>
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88/">其他技术栈</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/">前端经验</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/">学习笔记-CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/">安卓玩机</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/">💘学习笔记-CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-HTML/">💘学习笔记-HTML</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88/" rel="tag">其他技术栈</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/" rel="tag">前端经验</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/" rel="tag">学习笔记-CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/" rel="tag">安卓玩机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/" rel="tag">💘学习笔记-CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-HTML/" rel="tag">💘学习笔记-HTML</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Markdown/" style="font-size: 13.25px;">Markdown</a> <a href="/tags/Windows/" style="font-size: 13.25px;">Windows</a> <a href="/tags/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88/" style="font-size: 14px;">其他技术栈</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/" style="font-size: 13.75px;">前端经验</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/" style="font-size: 13.25px;">学习笔记-CSS</a> <a href="/tags/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/" style="font-size: 13px;">安卓玩机</a> <a href="/tags/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/" style="font-size: 13.5px;">💘学习笔记-CSS</a> <a href="/tags/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-HTML/" style="font-size: 13.25px;">💘学习笔记-HTML</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%8F%E9%AA%8C/">前端经验</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CSS%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8/" class="title">CSS属性大全</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-30T10:00:00.000Z" itemprop="datePublished">2022-01-30</time>
+              </p>
+            </div>
           </li>
           
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/">学习笔记-CSS</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/20/CSS%E7%AC%AC%E4%BA%94%E5%A4%A9-%E5%AE%9A%E4%BD%8D/" class="title">CSS第五天-定位</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-20T10:00:00.000Z" itemprop="datePublished">2022-01-20</time>
+              </p>
+            </div>
           </li>
-        
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/">学习笔记-CSS</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/19/CSS%E7%AC%AC%E5%9B%9B%E5%A4%A9-%E6%B5%AE%E5%8A%A8/" class="title">CSS第四天-浮动</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-19T10:00:00.000Z" itemprop="datePublished">2022-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/">💘学习笔记-CSS</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/18/CSS%E7%AC%AC%E4%B8%89%E5%A4%A9/" class="title">CSS第三天</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-18T10:00:00.000Z" itemprop="datePublished">2022-01-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%F0%9F%92%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-CSS/">💘学习笔记-CSS</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/18/CSS%E7%AC%AC%E4%BA%8C%E5%A4%A9/" class="title">CSS第二天</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-18T10:00:00.000Z" itemprop="datePublished">2022-01-18</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
-</nav>
-
   
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          <span id="subtitle" title="Magisk卡刷--通刷官方--了解Fastboot">
-            
-          </span>
-        </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2021-09-01 08:00" pubdate>
-          2021年9月1日 早上
-        </time>
-      </span>
     
   </div>
+</aside>
 
-  <div class="mt-1">
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-安卓玩机/Magisk卡刷--通刷官方--了解Fastboot" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          5.8k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          49 分钟
-        
-      </span>
-    
-
-    
-    
+    <div class="article-header">
       
-        <span id="busuanzi_container_page_pv" style="display: none">
-          <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> 次
-        </span>
         
+  
+    <h1 class="article-title" itemprop="name">
+      Magisk卡刷--通刷官方--了解Fastboot
+    </h1>
+  
+
       
-    
-  </div>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/09/01/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/Magisk%E5%8D%A1%E5%88%B7--%E9%80%9A%E5%88%B7%E5%AE%98%E6%96%B9--%E4%BA%86%E8%A7%A3Fastboot/" class="article-date">
+	  <time datetime="2021-09-01T00:00:00.000Z" itemprop="datePublished">2021-09-01</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/">安卓玩机</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/" rel="tag">安卓玩机</a>
+  </span>
 
 
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2021/09/01/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/Magisk%E5%8D%A1%E5%88%B7--%E9%80%9A%E5%88%B7%E5%AE%98%E6%96%B9--%E4%BA%86%E8%A7%A3Fastboot/" class="leancloud_visitors"  data-flag-title="Magisk卡刷--通刷官方--了解Fastboot">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/09/01/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/Magisk%E5%8D%A1%E5%88%B7--%E9%80%9A%E5%88%B7%E5%AE%98%E6%96%B9--%E4%BA%86%E8%A7%A3Fastboot/#comments" class="article-comment-link">评论</a></span>
         
       </div>
-
-      
     </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
+    <div class="article-entry marked-body" itemprop="articleBody">
       
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Magisk卡刷--通刷官方--了解Fastboot</h1>
-            
-            <div class="markdown-body">
-              
-              <blockquote>
+        <blockquote>
 <p>root，类似于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows/165458">Windows</a>系统中的Administrator，root是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux%E7%B3%BB%E7%BB%9F/1732935">Linux系统</a>中的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98/3602694">超级管理员</a>用户帐户，该帐户拥有整个系统的最高权限，可方便地对于系统的部件进行删除或更改。</p>
 </blockquote>
 <ul>
@@ -342,25 +449,25 @@
 <p>华为和ov貌似不可以，具体自己手机是哪个牌子的可以去查一查是否支持解bl锁，下文以小米手机为例</p>
 </blockquote>
 <p>解锁bl锁之前要先把自己的小米账号跟手机绑定上</p>
-<p>之后直接百度搜索小米解锁bl锁<img src="https://s4.ax1x.com/2022/01/23/75SqCn.png" srcset="/img/loading.gif" lazyload alt="75SqCn.png"></p>
-<p><img src="https://s4.ax1x.com/2022/01/23/75pkgx.png" srcset="/img/loading.gif" lazyload alt="75pkgx.png"></p>
-<p>下载完之后解压大概是得到这样的目录<img src="https://s4.ax1x.com/2022/01/23/75pK5d.png" srcset="/img/loading.gif" lazyload alt="75pK5d.png"></p>
-<p>打开miflash_unlock.exe并登录自己的小米账号进行解锁，解锁方式为在关机下音量下键与电源键一起按，当你看到这幅画面就证明你成功进入了Bootloader，之后就一路下一步就好了。<img src="https://s4.ax1x.com/2022/01/23/75pQPA.png" srcset="/img/loading.gif" lazyload alt="75pQPA.png"></p>
+<p>之后直接百度搜索小米解锁bl锁<img src="https://s4.ax1x.com/2022/01/23/75SqCn.png" alt="75SqCn.png"></p>
+<p><img src="https://s4.ax1x.com/2022/01/23/75pkgx.png" alt="75pkgx.png"></p>
+<p>下载完之后解压大概是得到这样的目录<img src="https://s4.ax1x.com/2022/01/23/75pK5d.png" alt="75pK5d.png"></p>
+<p>打开miflash_unlock.exe并登录自己的小米账号进行解锁，解锁方式为在关机下音量下键与电源键一起按，当你看到这幅画面就证明你成功进入了Bootloader，之后就一路下一步就好了。<img src="https://s4.ax1x.com/2022/01/23/75pQPA.png" alt="75pQPA.png"></p>
 <blockquote>
-<p>如果无法识别手机请打开手机的开发者选项并打开usb调试，miui的开发者选项是点击我的设备→全部参数→连续按miui版本就打开了开发者选项<img src="https://s4.ax1x.com/2022/01/23/75pyrT.png" srcset="/img/loading.gif" lazyload alt="75pyrT.png"></p>
+<p>如果无法识别手机请打开手机的开发者选项并打开usb调试，miui的开发者选项是点击我的设备→全部参数→连续按miui版本就打开了开发者选项<img src="https://s4.ax1x.com/2022/01/23/75pyrT.png" alt="75pyrT.png"></p>
 </blockquote>
 <p>ps:小米手机解bl锁是需要等七天的，七天之后才可以解锁</p>
 <p><strong>注意一定要备份，一定要备份，一定要备份！！！</strong></p>
 <h2 id="刷入第三方rec"><a href="#刷入第三方rec" class="headerlink" title="刷入第三方rec"></a>刷入第三方rec</h2><p>REC全程Recovery,通俗一点讲就是手机刷机软件，手机开机时按住电源键和音量＋建就可以进入到rec</p>
 <p>rec分为官方rec和第三方rec这个就是官方rec，啥玩意也没有，有的有很鸡肋，所以这里我们可以刷入第三方rec。</p>
-<p><img src="https://s4.ax1x.com/2022/01/23/75phGR.png" srcset="/img/loading.gif" lazyload alt="75phGR.png"></p>
-<p>第三方rec功能十分之多，可以直接一键root,这里推荐TWRP。<img src="https://s4.ax1x.com/2022/01/23/75p5xx.png" srcset="/img/loading.gif" lazyload alt="75p5xx.png"></p>
-<h2 id="刷入第三方rec-1"><a href="#刷入第三方rec-1" class="headerlink" title="刷入第三方rec"></a>刷入第三方rec</h2><p>首先要做的就是找到你手机对应的第三方rec,集合文件的下载地址： 天翼云盘 <a target="_blank" rel="noopener" href="http://t.cn/A6ADTtwL"><em>O</em>网页链接</a>（访问码：vv8a）<br><img src="https://s4.ax1x.com/2022/01/23/7590Te.png" srcset="/img/loading.gif" lazyload alt="7590Te.png"><br><img src="https://s4.ax1x.com/2022/01/23/759clt.png" srcset="/img/loading.gif" lazyload alt="759clt.png"><br>自行找到与自己手机对应的rec下载</p>
-<p>下载完成后解压直接运行twrp一键刷入工具bat<img src="https://s4.ax1x.com/2022/01/23/7592Of.png" srcset="/img/loading.gif" lazyload alt="7592Of.png"></p>
-<p>部分机型可能没有这个文件，别慌你只需要找到一个有这个文件的，然后右键记事本打开它，把我画上的这个镜像文件名字改成你自己手机对应的rec里面带的镜像文件，改完之后保存把这个改完之后的bat文件放到你手机对应rec的文件夹里运行就可以了，记得运行时手机要处在Bootloader模式。<img src="https://s4.ax1x.com/2022/01/23/759f0S.png" srcset="/img/loading.gif" lazyload alt="759f0S.png"></p>
+<p><img src="https://s4.ax1x.com/2022/01/23/75phGR.png" alt="75phGR.png"></p>
+<p>第三方rec功能十分之多，可以直接一键root,这里推荐TWRP。<img src="https://s4.ax1x.com/2022/01/23/75p5xx.png" alt="75p5xx.png"></p>
+<h2 id="刷入第三方rec-1"><a href="#刷入第三方rec-1" class="headerlink" title="刷入第三方rec"></a>刷入第三方rec</h2><p>首先要做的就是找到你手机对应的第三方rec,集合文件的下载地址： 天翼云盘 <a target="_blank" rel="noopener" href="http://t.cn/A6ADTtwL"><em>O</em>网页链接</a>（访问码：vv8a）<br><img src="https://s4.ax1x.com/2022/01/23/7590Te.png" alt="7590Te.png"><br><img src="https://s4.ax1x.com/2022/01/23/759clt.png" alt="759clt.png"><br>自行找到与自己手机对应的rec下载</p>
+<p>下载完成后解压直接运行twrp一键刷入工具bat<img src="https://s4.ax1x.com/2022/01/23/7592Of.png" alt="7592Of.png"></p>
+<p>部分机型可能没有这个文件，别慌你只需要找到一个有这个文件的，然后右键记事本打开它，把我画上的这个镜像文件名字改成你自己手机对应的rec里面带的镜像文件，改完之后保存把这个改完之后的bat文件放到你手机对应rec的文件夹里运行就可以了，记得运行时手机要处在Bootloader模式。<img src="https://s4.ax1x.com/2022/01/23/759f0S.png" alt="759f0S.png"></p>
 <h2 id="root系统"><a href="#root系统" class="headerlink" title="root系统"></a>root系统</h2><p>此时你的手机就会重启进入TWRP，这个时候点击高级→关闭AVB2.0校验</p>
-<p><img src="https://s4.ax1x.com/2022/01/23/759ofs.png" srcset="/img/loading.gif" lazyload alt="759ofs.png"></p>
-<p><img src="https://s4.ax1x.com/2022/01/23/759Hlq.png" srcset="/img/loading.gif" lazyload alt="759Hlq.png"></p>
+<p><img src="https://s4.ax1x.com/2022/01/23/759ofs.png" alt="759ofs.png"></p>
+<p><img src="https://s4.ax1x.com/2022/01/23/759Hlq.png" alt="759Hlq.png"></p>
 <p>之后还是点击高级→root系统，这里会自动安装面具，之后手机会自动重启，手机上会多一个面具</p>
 <p>这个时候你的手机就已经root成功了，你可以选择很多框架比如xp exp lsp框架，反正root好处多多，还有太多功能等待发掘，如果有时间可能会出第二期教程，教一下怎么刷框架和推荐一些模块，好了就这样，收工！</p>
 <hr>
@@ -391,7 +498,7 @@
 <p>1：不同的手机不一样，对小米系列来说，长按电源键+音量加，待手机重启之后，松开电源键，继续按住音量加即可进入</p>
 <p>2：在系统更新界面，选择“重启到Recovery”，也可以进入第三方REC；某些官改会在开机界面提供“卡刷模式”，亦即第三方REC模式。</p>
 <p>3：卡米等情况下也可以进，方法如1</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/P55wB21JibE4J7PZ6nZCQviarkGIQkh4CXSPTAjtajjicHUicD8nMbGV7NoaWMdicUaibeYC6Ue7UfnJ5r7oicGOlkZ7g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/P55wB21JibE4J7PZ6nZCQviarkGIQkh4CXSPTAjtajjicHUicD8nMbGV7NoaWMdicUaibeYC6Ue7UfnJ5r7oicGOlkZ7g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>第三方REC如何设置中文（前提是本身支持，某些不支持中文）：</strong></p>
 <p>1：如果你是首次刷入，在进入首页之前，选择“SelectLanguage”这个按钮，找到“Chinese（Simplified）”这个选项，然后确认即可</p>
 <p>2：如果你已经进入了首页，可以点击“Setting”，选择第四个图标，选择语言。然后确认。</p>
@@ -412,15 +519,15 @@
 <p>2：第三方REC下，可以使用截图；和系统截图一样，都是按下电源键+音量减，实现截图操作。所以以后如果要将刷机过程中的错误发给别人看，最好用截图功能。</p>
 <hr>
 <h1 id="你真的了解Fastboot模式吗-硬核科普！"><a href="#你真的了解Fastboot模式吗-硬核科普！" class="headerlink" title="你真的了解Fastboot模式吗? 硬核科普！"></a><strong>你真的了解Fastboot模式吗? 硬核科普！</strong></h1><p>不知道机友们对Fastboot模式了解多少，或许大部分机友只在解锁的时候进Fastboot，刷TWRP的时候进Fastboot，好奇这个模式还能干什么？</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRcOR20aFRicJq4haIbkIdqiaianQP1AibK6uDKlV3ddRgXWw1rsFYltYWmw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRcOR20aFRicJq4haIbkIdqiaianQP1AibK6uDKlV3ddRgXWw1rsFYltYWmw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>本篇文章就结合我的经验充分解释一下有关Fastboot在普通用户层面的相关知识，可能存在差异，后续更新完善，本人文字功底较差也欢迎指正！</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRdhfn8wLibYcPmfDxbGnIB5iaPumBpfzcNP2LMAYJOSt8G6aSOtVS7cqw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRdhfn8wLibYcPmfDxbGnIB5iaPumBpfzcNP2LMAYJOSt8G6aSOtVS7cqw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>Fastboot模式与刷机紧密的联系着，有一种说法，能进Fastboot就不是真砖，当然，只针对经验丰富的老司机，新手来说，我的手机开不了机了，就是砖头。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRibz1MzCPRc06cJkf5AYEyHnHiaHO0jblw65FsJgVzwUePy3ibKcLpXO8w/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRibz1MzCPRc06cJkf5AYEyHnHiaHO0jblw65FsJgVzwUePy3ibKcLpXO8w/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>CMD命令行</strong></p>
 <p>在没有适配adb环境的电脑上，不可以直接用开始菜单里的cmd来执行adb&#x2F;fastboot命令，后续抽空写一下全局adb教程</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRYjfgiaVS20PKMmSR8iabQ5e3qhtrsps3gibNpza00kwHJ00XcsCJywB9Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
-<h2 id=""><a href="#" class="headerlink" title="- "></a>- </h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## https:<span class="hljs-comment">//wwi.lanzoui.com/iAQUYskx50b## 下载谷歌官方提供的工具，第一个文件夹里有fastboot驱动</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRYjfgiaVS20PKMmSR8iabQ5e3qhtrsps3gibNpza00kwHJ00XcsCJywB9Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h2 id=""><a href="#" class="headerlink" title="- "></a>- </h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## https://wwi.lanzoui.com/iAQUYskx50b## 下载谷歌官方提供的工具，第一个文件夹里有fastboot驱动</span><br></pre></td></tr></table></figure>
 
 
 
@@ -436,34 +543,34 @@
 <p>（一加）: 三个键一起按住(音量上+下+电源键)</p>
 <p>（三星）: 插上数据线-音量上+下+电源键进入Recovery-用音量键选择reboot to bootloader再按电源键进入</p>
 <p>仅举例部分，可到各大机型板块或网上搜索关键字</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRDJt1OzftWWuN4ZG9LT15CxicV6z1sQhlohiaDoAcUrGpcZc868jThkKA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRDJt1OzftWWuN4ZG9LT15CxicV6z1sQhlohiaDoAcUrGpcZc868jThkKA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>连接电脑</strong></p>
 <p>Fastboot模式连接手机，如下图所示，没有驱动</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRhWACQZrIicymLOOnx7Ruu8d7tGE8HKPs7cbNo6HaPWrTFdFDNIq2A0A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRhWACQZrIicymLOOnx7Ruu8d7tGE8HKPs7cbNo6HaPWrTFdFDNIq2A0A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>Fastboot模式连接手机，如下图所示，连接正常（名称可能差异）</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRpJkBqo3KL7gAf6Vp6nlqAonZKDzFwhzjqhKP8Sm9xgLz2A6MV5bfjQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRpJkBqo3KL7gAf6Vp6nlqAonZKDzFwhzjqhKP8Sm9xgLz2A6MV5bfjQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>驱动在上面有提供</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRfK5hiaiaicpn1VILbsadCeibbuowdiaU7JP69NjRHwBIfeB5FMv5tEtcTtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRfK5hiaiaicpn1VILbsadCeibbuowdiaU7JP69NjRHwBIfeB5FMv5tEtcTtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>解锁BL</strong></p>
 <p>解锁会全盘格式化，各家厂商解锁方法不一</p>
-<h2 id="-1"><a href="#-1" class="headerlink" title="- "></a>- </h2><h2 id="-2"><a href="#-2" class="headerlink" title="- "></a>- </h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">fastboot oem unlock ## 一加 Fastboot命令 http:<span class="hljs-comment">//www.miui.com/unlock ## 小米 网页申请</span><br></code></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title="- "></a>- </h2><h2 id="-2"><a href="#-2" class="headerlink" title="- "></a>- </h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot oem unlock ## 一加 Fastboot命令 http://www.miui.com/unlock ## 小米 网页申请</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRPxrERGgQFwy3jashRctw1jox3iaS3prdBTIm0Qq6UvUiaqujAWpbic5kQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRPxrERGgQFwy3jashRctw1jox3iaS3prdBTIm0Qq6UvUiaqujAWpbic5kQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>仅举例部分，可到各大机型板块或网上搜索关键字</p>
 <p>解锁成功每次开机都会弹出警告页面(小米定制在第一屏)</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRribgbQK2TAabQv0WjYyFBrlyVeggmKe9ibXs0PRyiaQ9s6ia3XBFLOvw5w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRribgbQK2TAabQv0WjYyFBrlyVeggmKe9ibXs0PRyiaQ9s6ia3XBFLOvw5w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>查看是否解锁</strong></p>
 <p>最后一行显示locked视为未解锁</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRWZ7ZTklfOl7blXxHFGicnticJLAPM9nLtmWb3icwfLaOXm1ZR3PvvSuew/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRWZ7ZTklfOl7blXxHFGicnticJLAPM9nLtmWb3icwfLaOXm1ZR3PvvSuew/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>最后一行显示unlocked视为已解锁</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRLe5TJpApouzhKfxlLlX4kJA3VvNeTuMvOmvykOYibbftNy3vPicledsQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRLe5TJpApouzhKfxlLlX4kJA3VvNeTuMvOmvykOYibbftNy3vPicledsQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>小米的开机第一屏有把锁判定</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRu9KB6elxAaeG8FFKibATiaYZeStk9km1ia0KO9Z4QhV80d2cjwyTOFZXw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRu9KB6elxAaeG8FFKibATiaYZeStk9km1ia0KO9Z4QhV80d2cjwyTOFZXw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>解除加密</strong></p>
 <p>vbmeta分区加密的作用是保护系统不被修改，如果你想ROOT或者是想删掉一些系统文件，则必须去除，其原理是做空</p>
 <p>通过以下命令:</p>
 <h2 id="-3"><a href="#-3" class="headerlink" title="- "></a>- </h2><h2 id="-4"><a href="#-4" class="headerlink" title="- "></a>- </h2><p>- </p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clean">## https:<span class="hljs-comment">//wwi.lanzoui.com/iWlOVvdiffcfastboot --disable-verity --disable-verification flash vbmeta vbmeta.img</span><br>## https:<span class="hljs-comment">//wwi.lanzoui.com/iaJ6Bvdifgdfastboot flash vbmeta_system vbmeta_system.img</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## https://wwi.lanzoui.com/iWlOVvdiffcfastboot --disable-verity --disable-verification flash vbmeta vbmeta.img</span><br><span class="line">## https://wwi.lanzoui.com/iaJ6Bvdifgdfastboot flash vbmeta_system vbmeta_system.img</span><br></pre></td></tr></table></figure>
 
 <p>不去除加密的情况下修改系统文件，会循环卡死Fastboot</p>
 <p>在预装Android10.0的手机上，想要修改系统文件，将涉及到一个新的概念</p>
@@ -474,7 +581,7 @@
 <p>非预装安卓10.0的手机，例如红米K20Pro，获取ROOT权限以后，就可以通过MT自己精简系统了，把一些不会用到的预装APP删了重启，OK这些APP没了</p>
 <p>但如果！我的手机出厂就是安卓10.0及安卓10.0以上的系统，就拿我的红米K30S来说，按照大佬们的方法获取了ROOT权限，删了个不会用到的预装APP重启，你们猜会怎样?</p>
 <p>没错，就是卡兔子(Fastboot模式)</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRZSDnia2qxUicYqIPpCHIbCoXyCBfm1m6tTl4GUFtDHdGj9ibflTkAiacUg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRZSDnia2qxUicYqIPpCHIbCoXyCBfm1m6tTl4GUFtDHdGj9ibflTkAiacUg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>其根本的原因就是因为动态分区。本来单独固定大小的三个系统分区</p>
 <p>(System&#x2F;Vendor&#x2F;odm)</p>
 <p>合并成了一个super分区，其里面包含的子分区是可以随意调整大小的</p>
@@ -487,7 +594,7 @@
 <p>在非动态分区的情况下，此操作异常危险且无法通过OTA完成</p>
 <p>在动态分区的情况下，可以轻松通过修改super镜像完成，且可以通过OTA系统更新到用户的手机</p>
 <p>变化导致无法直接修改系统文件，但第三方ROM可以解决，例如一些官改就支持修改系统分区，只能说仅仅原版系统有这种限制，至于原因就不得而知了</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRib9aajtADkJJicliaia8sesvIM1ZZZ40Kg9nibs9EtPukEvqEAEYhL17UgA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRib9aajtADkJJicliaia8sesvIM1ZZZ40Kg9nibs9EtPukEvqEAEYhL17UgA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>有哪些系统分区？</strong></p>
 <p>早期的刷机包非常简陋，整个刷机包才一两百m，只有一个系统分区System(不包括boot和底层)</p>
 <p>安卓8.0开始，从System里分离出来了Vendor</p>
@@ -499,25 +606,25 @@
 <p>通过以上，我们对系统分区有一定了解，而镜像的意思就是存放系统文件的压缩包，这跟我们平常压缩的文件不同，是一种特定的压缩形态，能保持每个文件对应的权限，在刷机包里一般是后缀为img的文件(卡刷包一般压缩为dat&#x2F;br)</p>
 <p>Fastboot模式可以刷入img格式的镜像，例如刷入System分区镜像:</p>
 <h2 id="-5"><a href="#-5" class="headerlink" title="- "></a>- </h2><p>- </p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">fastboot flash <span class="hljs-keyword">system</span> xx.img## XX.img指镜像目录## <span class="hljs-keyword">system</span>指将刷入的分区<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash system xx.img## XX.img指镜像目录## system指将刷入的分区</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRvc7mHEht4bMxgERpy8Dytkvy8D2maiaSNdjkS1ibKhPpTIKMZrqgrh2g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRvc7mHEht4bMxgERpy8Dytkvy8D2maiaSNdjkS1ibKhPpTIKMZrqgrh2g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>刷入Vendor分区镜像：</p>
 <h2 id="-6"><a href="#-6" class="headerlink" title="- "></a>- </h2><p>- </p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">fastboot flash vendor xx.img## XX.img指镜像目录## vendor指将刷入的分区<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash vendor xx.img## XX.img指镜像目录## vendor指将刷入的分区</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRaQKxJUgENpExr0Z31f5ADr6icJOwFCtEOSSRg9NRfRqef0QjlvUOWzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRaQKxJUgENpExr0Z31f5ADr6icJOwFCtEOSSRg9NRfRqef0QjlvUOWzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>Fastbootd</strong></p>
 <p>Fastbootd是动态分区专属的一个模式，属于Recovery分区的功能。部分TWRP也适配</p>
 <p>预装动态分区的手机上是无法通过在Fastboot模式刷入系统镜像的(指super内的子分区)，只能完整刷入super.img</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlR6tSdd9Xeh9rEVriavurLvCtsmicQNHKyjmerOrmSYbe3f26kHZ8ibjZSw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlR6tSdd9Xeh9rEVriavurLvCtsmicQNHKyjmerOrmSYbe3f26kHZ8ibjZSw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>在fastboot下执行:</p>
 <p>- </p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Fastboot reboot fastboot</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Fastboot reboot fastboot</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRqEtOibfGKseoLqTjgWsnyOAIqwCoHMpbMzAzzVSgXnMOpYHToR2vZRA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRqEtOibfGKseoLqTjgWsnyOAIqwCoHMpbMzAzzVSgXnMOpYHToR2vZRA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>进入Fastbootd方可正常刷入</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRyWbR6KXIuib96jO9dts7kKytsibetUCMJiaZ67BMlfRw1iafvQkt9WR45g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRyWbR6KXIuib96jO9dts7kKytsibetUCMJiaZ67BMlfRw1iafvQkt9WR45g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>双分区概念</strong></p>
 <p>网上相关科普很多，你可以理解成我的手机里有两个大分区，通常我们手机系统更新步骤是</p>
 <p>下载系统包-点击更新-手机重启-离线安装-自动重启</p>
@@ -527,525 +634,351 @@
 <p>我的手机有两个分区A和B，我在使用A分区收到系统更新，系统会将系统安装到B分区，安装完成提示重启，就会进入B分区</p>
 <p>好处有很多，比如把手机搞变砖了还可以切换另一个分区继续用</p>
 <p><strong>切换分区</strong></p>
-<h2 id="-7"><a href="#-7" class="headerlink" title="- "></a>- </h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">fastboot set_active a## 切换到A分区<br></code></pre></td></tr></table></figure>
+<h2 id="-7"><a href="#-7" class="headerlink" title="- "></a>- </h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot set_active a## 切换到A分区</span><br></pre></td></tr></table></figure>
 
 
 
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlR2rXuCScZ0W19Cn1AIuEhbEBLlUbcb3xiaR4pb0aP7aoWNbnlOWUibrrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
-<h2 id="-8"><a href="#-8" class="headerlink" title="- "></a>- </h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">fastboot set_active b## 切换到B分区<br></code></pre></td></tr></table></figure>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlR2rXuCScZ0W19Cn1AIuEhbEBLlUbcb3xiaR4pb0aP7aoWNbnlOWUibrrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h2 id="-8"><a href="#-8" class="headerlink" title="- "></a>- </h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot set_active b## 切换到B分区</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRlSWoFJ3gIicNpOb0vEicibJA7ibpyE9uPYnaHHTTQgaicQhUwpXU71ianb3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRlSWoFJ3gIicNpOb0vEicibJA7ibpyE9uPYnaHHTTQgaicQhUwpXU71ianb3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p><strong>回锁BL</strong></p>
 <p>在执行回锁指令之前，你必须确定当前系统没有任何修改，否则无法开机。因此回锁操作十分危险。</p>
 <p>- </p>
-<figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cos">fastboot oem <span class="hljs-keyword">lock</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot oem lock</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRPxrERGgQFwy3jashRctw1jox3iaS3prdBTIm0Qq6UvUiaqujAWpbic5kQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7kqAiaIYBibMeo1viaVew4iaxlRPxrERGgQFwy3jashRctw1jox3iaS3prdBTIm0Qq6UvUiaqujAWpbic5kQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <hr>
 <h1 id="小米通用刷回官方系统教程"><a href="#小米通用刷回官方系统教程" class="headerlink" title="小米通用刷回官方系统教程"></a>小米通用刷回官方系统教程</h1><p>此方法并非万能，倘若你的设备无法进入Fastboot，就只能求助售后了</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlohmFN5T1yHxV8xuWibicW6LaDsVjribYhtMBcTekeMeQmPFN1ckuwfXaw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlohmFN5T1yHxV8xuWibicW6LaDsVjribYhtMBcTekeMeQmPFN1ckuwfXaw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>在这里下载你机型的线刷包</p>
 <p><a target="_blank" rel="noopener" href="https://www.miui.com/shuaji-393.html">https://www.miui.com/shuaji-393.html</a></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlMuHL2xNJEcGqicmX1WZAGsumqibb5Fw4YVCqCTucn34prHiaiaBcZR4Fwg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlMuHL2xNJEcGqicmX1WZAGsumqibb5Fw4YVCqCTucn34prHiaiaBcZR4Fwg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>下载通用刷机工具</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl4dS05O2XibmTjKx7GXsVfY1iba4eFUKrdvT2e5PcCX9TJUJ0ibqh8tCKg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl4dS05O2XibmTjKx7GXsVfY1iba4eFUKrdvT2e5PcCX9TJUJ0ibqh8tCKg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>解压到英文目录的文件夹，如果不懂就直接解压到桌面</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlIspVWaxpjmBwDQsw5UbSad6ztp0ribut6PVUC10BibTOoehMZnymNc7w/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlIspVWaxpjmBwDQsw5UbSad6ztp0ribut6PVUC10BibTOoehMZnymNc7w/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>最新线刷包一般两层压缩，还需要解压一次</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl5gR7Gmicng5xyTA4Svy7WRhg7r3fKGSP2pNSzichFkrDy0rFoW5CMkMA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl5gR7Gmicng5xyTA4Svy7WRhg7r3fKGSP2pNSzichFkrDy0rFoW5CMkMA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>点进去文件夹能看到这些东西</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlJouOYv61T2I8D5xib4U2scD3F8F1GemsMkKUBG2ZxgvFLAtvJLGvUcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlJouOYv61T2I8D5xib4U2scD3F8F1GemsMkKUBG2ZxgvFLAtvJLGvUcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>解压通用刷机工具并打开这个</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvldrTlPIVL5ibkFNoB75ichcfbSLpCdpHcftF3WMXYia24jA9p2JT9icsCzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvldrTlPIVL5ibkFNoB75ichcfbSLpCdpHcftF3WMXYia24jA9p2JT9icsCzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>点这里安装驱动</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl2X7QasZqYlO1LXW9En7nfPyENiaibHBqarBMVSgsd5MzKHuUlgZyYSPQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl2X7QasZqYlO1LXW9En7nfPyENiaibHBqarBMVSgsd5MzKHuUlgZyYSPQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>点这里选择解压出来的文件夹</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvld4WhpuyRpMkiaKawWzInhrxebQK4NtHWDgAZsMOqJQwAlrn7JgYf17A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvld4WhpuyRpMkiaKawWzInhrxebQK4NtHWDgAZsMOqJQwAlrn7JgYf17A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>注意是包含内容的那个文件夹</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlE2DsEBYpcWVibs4FGZoSIJwqNdvSHDbvR9niaqsQgq34NbhP3UrhPayA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlE2DsEBYpcWVibs4FGZoSIJwqNdvSHDbvR9niaqsQgq34NbhP3UrhPayA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>如果选错了会有错误提示</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl9cDHBTUVvk6Bqb2myacGC4knn4hI13icp5I2amuPZD5jicv32Sjhib4xw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl9cDHBTUVvk6Bqb2myacGC4knn4hI13icp5I2amuPZD5jicv32Sjhib4xw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>目录必须是全英文</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlvbn9X3LxhEyDnyvwic2FJjpFLecBpeZJ1EDVdahaVTicfL14jPXtGaGg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlvbn9X3LxhEyDnyvwic2FJjpFLecBpeZJ1EDVdahaVTicfL14jPXtGaGg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>第1个是常规的刷回，第3个是回锁并刷回(解锁不易，慎重回锁)，第2个是MIUI升级版本</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlou1Wm8dLfA6JETUlra0uFibNm6mRaujCNxWQIOZMXribqfHKyFOdH2Zg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlou1Wm8dLfA6JETUlra0uFibNm6mRaujCNxWQIOZMXribqfHKyFOdH2Zg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>把手机彻底关机，音量下＋电源键进入兔子模式插上</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl519ey6z6mCqz0mN0HCXpwbePLMyibxx2dicXqxuuoJbCeyxOmsmxs4IQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvl519ey6z6mCqz0mN0HCXpwbePLMyibxx2dicXqxuuoJbCeyxOmsmxs4IQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>是否连接成功取决于你的数据线&#x2F;电脑接口，可在设备管理器查看</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlHtL3SvUrLnaxibmbU0DHGnpIFDkomOgkyOw7InBkVGicv3IPdiapOfryw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlHtL3SvUrLnaxibmbU0DHGnpIFDkomOgkyOw7InBkVGicv3IPdiapOfryw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>点击加载设备，就能看到你的手机连上了</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlEtqVLpb0E2ZXMGrnRjtyNu51luuhgAwqP25QJicd0ticrYLicjrgCXU3Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlEtqVLpb0E2ZXMGrnRjtyNu51luuhgAwqP25QJicd0ticrYLicjrgCXU3Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>点击刷机开始刷入，一定要保持稳定连接，等待完成</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlq6DVONTDj5mvHNnyR7O63bMPCibQ9MzJq7e11Zf8fACQibEqdSeS3PWQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="/img/loading.gif" lazyload alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Y4ts7cXef7nmu3xyWXdTHCDMibCGPoVvlq6DVONTDj5mvHNnyR7O63bMPCibQ9MzJq7e11Zf8fACQibEqdSeS3PWQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 
-              
-            </div>
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/" class="category-chain-item">安卓玩机</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/">#安卓玩机</a>
       
     </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>Magisk卡刷--通刷官方--了解Fastboot</div>
-      <div>https://www.xindong350.top/2021/09/01/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/Magisk%E5%8D%A1%E5%88%B7--%E9%80%9A%E5%88%B7%E5%AE%98%E6%96%B9--%E4%BA%86%E8%A7%A3Fastboot/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>小城故事</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2021年9月1日</div>
-        </div>
-      
-      
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
-            
-            
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
-        </div>
-      </div>
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/11/01/Windows/Win%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99--KMS/" title="Windows系统网站--KMS">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Windows系统网站--KMS</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/08/09/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%85%8D%E8%B4%B9%E8%B5%84%E6%BA%90%E5%A4%A7%E6%B1%87%E6%80%BB/" title="前端开发免费资源大汇总">
-                        <span class="hidden-mobile">前端开发免费资源大汇总</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://www.xindong350.top/2021/09/01/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA/Magisk%E5%8D%A1%E5%88%B7--%E9%80%9A%E5%88%B7%E5%AE%98%E6%96%B9--%E4%BA%86%E8%A7%A3Fastboot/" title="Magisk卡刷--通刷官方--了解Fastboot" target="_blank" rel="external">https://www.xindong350.top/2021/09/01/安卓玩机/Magisk卡刷--通刷官方--了解Fastboot/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
 
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Copyright © 2021</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>小城故事</span></a> 
-    </div>
-  
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="busuanzi_container_site_pv" style="display: none">
-        总访问量 
-        <span id="busuanzi_value_site_pv"></span>
-         次
-      </span>
-    
-    
-      <span id="busuanzi_container_site_uv" style="display: none">
-        总访客数 
-        <span id="busuanzi_value_site_uv"></span>
-         人
-      </span>
-    
-    
-  
-</div>
-
-  
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
-  <span>
-    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      鄂ICP证20210314号
-    </a>
-  </span>
-  
-    
-      <span>
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=20210314"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
-          
-          <span>鄂公网安备20210314号</span>
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://www.xindong350.top" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/" class="img-rounded w-full" alt="">
         </a>
-      </span>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://www.xindong350.top" target="_blank"><span class="text-dark">小城故事</span><small class="ml-1x"></small></a></h3>
+        <div>小城故事</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
   
 </div>
 
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/11/01/Windows/Win%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99--KMS/" title="Windows系统网站--KMS"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/08/09/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%85%8D%E8%B4%B9%E8%B5%84%E6%BA%90%E5%A4%A7%E6%B1%87%E6%80%BB/" title="前端开发免费资源大汇总"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
   
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
   
-  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
   
 
 
+</main>
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var title = subtitle.title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://tenapi.cn/qqzlk/?qq=2848141597" target="_blank" title="Qq" data-toggle=tooltip data-placement=top><i class="icon icon-qq"></i></a></li>
+        
+        <li><a href="https://s3.bmp.ovh/imgs/2022/01/2910c6202194059b.jpg" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="icon icon-wechat"></i></a></li>
+        
+        <li><a href="https://github.com/web-xc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
 
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-  
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script>
-  Fluid.utils.createScript('https://cdn.staticfile.org/tocbot/4.18.0/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
-      scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-  });
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-
-  <script>
-  (function() {
-    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
-    var enableCopy = CONFIG.copy_btn;
-    if (!enableLang && !enableCopy) {
-      return;
-    }
-
-    function getBgClass(ele) {
-      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
-    }
-
-    var copyTmpl = '';
-    copyTmpl += '<div class="code-widget">';
-    copyTmpl += 'LANG';
-    copyTmpl += '</div>';
-    jQuery('.markdown-body pre').each(function() {
-      var $pre = jQuery(this);
-      if ($pre.find('code.mermaid').length > 0) {
-        return;
-      }
-      if ($pre.find('span.line').length > 0) {
-        return;
-      }
-
-      var lang = '';
-
-      if (enableLang) {
-        lang = CONFIG.code_language.default;
-        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
-          lang = $pre[0].children[0].classList[1];
-        } else if ($pre[0].getAttribute('data-language')) {
-          lang = $pre[0].getAttribute('data-language');
-        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
-          lang = $pre[0].children[0].classList[1];
-          $pre.parent().addClass('code-wrapper');
-        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
-          $pre.wrap('<div class="code-wrapper"></div>');
-        }
-        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
-      }
-      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
-        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
-
-      if (enableCopy) {
-        Fluid.utils.createScript('https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js', function() {
-          var clipboard = new window.ClipboardJS('.copy-btn', {
-            target: function(trigger) {
-              var nodes = trigger.parentNode.childNodes;
-              for (var i = 0; i < nodes.length; i++) {
-                if (nodes[i].tagName === 'CODE') {
-                  return nodes[i];
-                }
-              }
-            }
-          });
-          clipboard.on('success', function(e) {
-            e.clearSelection();
-            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
-            setTimeout(function() {
-              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
-            }, 2000);
-          });
-        });
-      }
-    });
-  })();
-</script>
+<script src="/js/plugin.min.js"></script>
 
 
-  
-<script>
-  Fluid.utils.createScript('https://cdn.staticfile.org/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
     };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-  });
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<!-- custom analytics part create by xiamo -->
+<script defer src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script defer>
+AV.init({
+  appId: '',
+  appKey: ''
+});
+
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+		var visitors= $('.leancloud_visitors');
+		query.greaterThanOrEqualTo("time", 0);		
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {				
+					return;
+				}
+				var data = results;
+				visitors.each(function(){
+					var url = $(this).attr('id').trim();					
+					for (var i = 0; i < data.length; i++) {
+						var object = data[i];
+						var content = object.get('time');
+						var _url = object.get('url')
+						if(url == _url){
+							$(this).text(content);
+						}
+					}
+				})
+				
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else {
+		showTime(Counter);
+	}
+}); 
 </script>
 
 
-  
-<script>
-  Fluid.utils.createScript('https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
   });
-</script>
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
-  <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
 
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
 </body>
 </html>
