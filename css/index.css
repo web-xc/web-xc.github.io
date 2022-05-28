@@ -1493,8 +1493,6 @@ input::placeholder {
   background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   background-attachment: local;
   background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -3365,8 +3363,6 @@ h1.page-title + .tag-cloud-list {
   position: relative;
   background-attachment: scroll;
   background-position: bottom;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
 }
 #footer-wrap {
@@ -3396,8 +3392,6 @@ h1.page-title + .tag-cloud-list {
   position: relative;
   width: 100%;
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-transition: all 0.5s;
