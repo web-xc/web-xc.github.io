@@ -1359,7 +1359,7 @@ canvas:not(#ribbon-canvas),
   --tab-botton-color: #1f2d3d;
   --tab-button-hover-bg: #dcdcdc;
   --tab-button-active-bg: #fff;
-  --card-bg: #fff;
+  --card-bg: rgba(255,255,255,0.639);
   --sidebar-bg: #f6f8fa;
   --btn-hover-color: #ff7242;
   --btn-color: #fff;
@@ -2492,7 +2492,7 @@ figure.highlight pre .javascript .function {
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item >.recent-post-info {
-    padding: 20px 20px 30px;
+    padding: -1px 20px 30px;
     width: 100%;
   }
 }
