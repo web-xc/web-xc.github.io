@@ -1359,11 +1359,11 @@ canvas:not(#ribbon-canvas),
   --tab-botton-color: #1f2d3d;
   --tab-button-hover-bg: #dcdcdc;
   --tab-button-active-bg: #fff;
-  --card-bg: rgba(255,255,255,0.639);
-  --sidebar-bg: #f6f8fa;
-  --btn-hover-color: #ff7242;
+  --card-bg: rgba(255,255,255,0.949);
+  --sidebar-bg: #c2e1ff;
+  --btn-hover-color: #43c375;
   --btn-color: #fff;
-  --btn-bg: #49b1f5;
+  --btn-bg: #06f;
   --text-bg-hover: rgba(73,177,245,0.7);
   --light-grey: #eee;
   --dark-grey: #cacaca;
@@ -2784,6 +2784,7 @@ h1.page-title + .tag-cloud-list {
 #aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover {
   padding: 3px 17px;
   background-color: var(--text-bg-hover);
+  border-radius: 5px;
 }
 #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a span:first-child,
 #aside-content .card-categories ul.card-category-list > .card-category-list-item a span:first-child {
@@ -3306,7 +3307,7 @@ h1.page-title + .tag-cloud-list {
 }
 #footer {
   position: relative;
-  background: #49b1f5;
+  background: rgba(255,255,255,0);
   background-attachment: scroll;
   background-position: bottom;
   background-size: cover;
@@ -3358,7 +3359,7 @@ h1.page-title + .tag-cloud-list {
 }
 #page-header.full_page #site-info {
   position: absolute;
-  top: 330px;
+  top: 130px;
   padding: 0 10px;
   width: 100%;
 }
@@ -4371,7 +4372,7 @@ h1.page-title + .tag-cloud-list {
   z-index: 103;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 300px;
+  width: 270px;
   height: 100%;
   background: var(--sidebar-bg);
   -webkit-transition: all 0.5s;
@@ -4408,6 +4409,7 @@ h1.page-title + .tag-cloud-list {
 }
 #sidebar #sidebar-menus .menus_items .site-page:hover {
   background: var(--text-bg-hover);
+  border-radius: 5px;
 }
 #sidebar #sidebar-menus .menus_items .site-page i:first-child {
   width: 15%;
