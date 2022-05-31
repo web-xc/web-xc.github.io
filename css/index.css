@@ -1411,7 +1411,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://fastly.jsdelivr.net/gh/web-xc/iMG/iMG/BiZhi[1].jpg);
+  background: url(https://fastly.jsdelivr.net/gh/web-xc/iMG/iMG/bz.jpg);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -4232,6 +4232,7 @@ h1.page-title + .tag-cloud-list {
   margin-top: 40px;
   width: 100%;
   background: #000;
+  border-radius: 30px;
 }
 .layout > .recent-posts .pagination > * {
   display: inline-block;
@@ -4583,6 +4584,7 @@ h1.page-title + .tag-cloud-list {
 @media screen and (max-width: 600px) {
   .relatedPosts > .relatedPosts-list > div {
     width: calc(100% - 4px);
+    border-radius: 20px;
   }
 }
 .relatedPosts > .relatedPosts-list .content {
@@ -4616,10 +4618,11 @@ h1.page-title + .tag-cloud-list {
 }
 .post-reward .reward-button {
   display: inline-block;
-  padding: 4px 24px;
+  padding: 4px 30px;
   background: var(--btn-bg);
   color: var(--btn-color);
   cursor: pointer;
+  border-radius: 5px;
 }
 .post-reward:hover .reward-button {
   background: var(--btn-hover-color);
