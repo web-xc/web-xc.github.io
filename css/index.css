@@ -3358,12 +3358,12 @@ h1.page-title + .tag-cloud-list {
   content: '';
 }
 #page-header.full_page {
-  height: 480px;
+  height: 500px;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
   position: absolute;
-  top: 160px;
+  top: 180px;
   padding: 0 10px;
   width: 100%;
 }
