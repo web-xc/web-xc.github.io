@@ -13,5 +13,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 # 记得替换成你的域名
-Sitemap: http://webxc.ml/sitemap.xml
-Sitemap: http://webxc.ml/baidusitemap.xml主动推送
+Sitemap: http://webxc.eu.org/sitemap.xml
+Sitemap: http://webxc.eu.org/baidusitemap.xml主动推送

@@ -1,0 +1,798 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Ajax第三天 | 小城故事</title><meta name="keywords" content="Ajax笔记"><meta name="author" content="小城故事"><meta name="copyright" content="小城故事"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Day03_AJAX原理知识点自测 以下哪个方法可以把 JS 数据类型转成 JSON 字符串类型? A. JSON.stringify() B. JSON.parse()  答案  选择A    以下哪个方法，会延迟一段时间后，再执行函数体，并执行一次就停止? A. setTimeout(函数体, 毫秒值) B. setInterval(函数体, 毫秒值)  答案  选择A    下面代码 res">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax第三天">
+<meta property="og:url" content="https://webxc.eu.org/post/fs67/index.html">
+<meta property="og:site_name" content="小城故事">
+<meta property="og:description" content="Day03_AJAX原理知识点自测 以下哪个方法可以把 JS 数据类型转成 JSON 字符串类型? A. JSON.stringify() B. JSON.parse()  答案  选择A    以下哪个方法，会延迟一段时间后，再执行函数体，并执行一次就停止? A. setTimeout(函数体, 毫秒值) B. setInterval(函数体, 毫秒值)  答案  选择A    下面代码 res">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp">
+<meta property="article:published_time" content="2023-06-06T18:20:00.000Z">
+<meta property="article:modified_time" content="2023-07-05T18:43:20.509Z">
+<meta property="article:author" content="小城故事">
+<meta property="article:tag" content="Ajax笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp"><link rel="shortcut icon" href="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"><link rel="canonical" href="https://webxc.eu.org/post/fs67/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '吾辈宣布,你的剪切板已被占领',
+    error: '呀~复制失败,请在尝试下',
+    noSupport: '对不起,你的浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":60,"languages":{"author":"作者: 小城故事","link":"链接: ","source":"来源: 小城故事","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"您已切换为繁体","cht_to_chs":"您已切换为简体","day_to_night":"您已切换为深色主题","night_to_day":"您已切换为浅色主题","bgLight":"#3b70fc","bgDark":"#121212","position":"bottom-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Ajax第三天',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-06 02:43:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn1.tianli0.top/gh/web-xc/My-blog-CSS/mgi.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/gh/web-xc/My-blog-CSS/mg111.css"><link rel="stylesheet" href="https://npm.elemecdn.com/webxc@1.0.16/css/mg2.css"><link rel="stylesheet" href="https://npm.elemecdn.com/webxc@1.0.11/css/styless.css"><link rel="stylesheet" href="https://npm.elemecdn.com/webxc@1.0.11/css/styles.css"><link rel="stylesheet" href="https://npm.elemecdn.com/webxc@1.0.11/css/font.css"><link rel="stylesheet" href="https://npm.elemecdn.com/webxc@1.0.15/css/font2.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/webxc@1.0.12/css/swiper/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/webxc@1.0.12/css/swiper/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg" onerror="onerror=null;src='https://npm.elemecdn.com/webxc@1.0.2/banner/404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-shouye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-shijian"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-lianxiwomen"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-iconzhengli-"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-a-wangzhanchaojilianjiehulianwang"></i><span> 推荐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.inode.club/"><i class="fa-fw fa-sharp fa-solid fa-square-rss"></i><span> 程序员指南</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://ife.baidu.com/"><i class="fa-fw fa-brands fa-vuejs"></i><span> 前端技术学园</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.yuque.com/tademanong/ag7q4n"><i class="fa-fw fa-solid fa-users"></i><span> 前端技术圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.code-nav.cn/"><i class="fa-fw fa-solid fa-shop"></i><span> 编程导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://q.shanyue.tech/"><i class="fa-fw fa-brands fa-square-js"></i><span> 每日一题</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://fanyouf.gitee.io/u1word/#/h5"><i class="fa-fw fa-solid fa-headphones"></i><span> 前端必会单词</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://site.51git.cn/render/gonav/4.html"><i class="fa-fw iconfont icon-wangzhandingzhi"></i><span> 网址导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://z.webxc.eu.org/musics/"><i class="fa-fw iconfont icon-musical-note"></i><span> 音乐解锁</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp')"><nav id="nav"><span id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="前往博客主页" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">主站</span></a><a class="back-menu-item" href="https://e.webxc.eu.org/" rel="external nofollow" title="前往学习笔记" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">学习笔记</span></a><a class="back-menu-item" href="https://v.webxc.eu.org/" rel="external nofollow" title="VuePress学习文档" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">VuePress文档</span></a><a class="back-menu-item" href="https://b.webxc.eu.org/" rel="external nofollow" title="旧站Hexo" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">旧站Hexo</span></a><a class="back-menu-item" href="https://gridea.webxc.eu.org/" rel="external nofollow" title="Gridea笔记" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">Gridea笔记</span></a><a class="back-menu-item" href="https://c.webxc.eu.org/" rel="external nofollow" title="魔改Hexo" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">魔改Hexo</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">博客镜像</div><div class="back-menu-list"><a class="back-menu-item" href="https://blog.webxc.eu.org/" title="Vercel镜像" target="_blank" rel="noopener nofollow" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">Vercel镜像</span></a><a class="back-menu-item" href="https://ne.webxc.eu.org/" title="Netlify镜像" target="_blank" rel="noopener nofollow" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">Netlify镜像</span></a><a class="back-menu-item" href="https://web-xc.gitee.io/" title="Gitee镜像" target="_blank" rel="noopener nofollow" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">Gitee镜像</span></a><a class="back-menu-item" href="https://cf.webxc.eu.org/" title="Cloudflare镜像" target="_blank" rel="noopener nofollow" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">Cloudflare镜像</span></a><a class="back-menu-item" href="https://render.webxc.eu.org/" title="Render镜像" target="_blank" rel="noopener nofollow" one-link-mark="yes"><img class="back-menu-item-icon" src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg"/><span class="back-menu-item-text">Render镜像</span></a></div></div></div></div><a id="site-name" href="/"><div class="title">小城故事</div><i class="fa-solid fa-house"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:btf.scrollToDest(0, 500)">PAGE_NAME</a></center></div><div id="menus"><div class="nav-button" id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" title="浅色和深色模式转换" onclick="switchDarkMode()"><i class="fas fa-adjust"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn"><i class="fas fa-arrow-up"></i><span id="percent" onclick="btf.scrollToDest(0,500)">0</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-shouye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-shijian"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-lianxiwomen"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw iconfont icon-iconzhengli-"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-a-wangzhanchaojilianjiehulianwang"></i><span> 推荐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://www.inode.club/"><i class="fa-fw fa-sharp fa-solid fa-square-rss"></i><span> 程序员指南</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://ife.baidu.com/"><i class="fa-fw fa-brands fa-vuejs"></i><span> 前端技术学园</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.yuque.com/tademanong/ag7q4n"><i class="fa-fw fa-solid fa-users"></i><span> 前端技术圈</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.code-nav.cn/"><i class="fa-fw fa-solid fa-shop"></i><span> 编程导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://q.shanyue.tech/"><i class="fa-fw fa-brands fa-square-js"></i><span> 每日一题</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://fanyouf.gitee.io/u1word/#/h5"><i class="fa-fw fa-solid fa-headphones"></i><span> 前端必会单词</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://site.51git.cn/render/gonav/4.html"><i class="fa-fw iconfont icon-wangzhandingzhi"></i><span> 网址导航</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://z.webxc.eu.org/musics/"><i class="fa-fw iconfont icon-musical-note"></i><span> 音乐解锁</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Ajax第三天</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-06T18:20:00.000Z" title="发表于 2023-06-07 02:20:00">2023-06-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-05T18:43:20.509Z" title="更新于 2023-07-06 02:43:20">2023-07-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Ajax%E7%AC%94%E8%AE%B0/">Ajax笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span id="" data-flag-title="Ajax第三天"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="Day03-AJAX原理"><a href="#Day03-AJAX原理" class="headerlink" title="Day03_AJAX原理"></a>Day03_AJAX原理</h3><h2 id="知识点自测"><a href="#知识点自测" class="headerlink" title="知识点自测"></a>知识点自测</h2><ol>
+<li><p>以下哪个方法可以把 JS 数据类型转成 JSON 字符串类型?</p>
+<p>A. JSON.stringify()</p>
+<p>B. JSON.parse()</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>选择A</li>
+</ul>
+</details>
+</li>
+<li><p>以下哪个方法，会延迟一段时间后，再执行函数体，并执行一次就停止?</p>
+<p>A. setTimeout(函数体, 毫秒值)</p>
+<p>B. setInterval(函数体, 毫秒值)</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>选择A</li>
+</ul>
+</details>
+</li>
+<li><p>下面代码 result 结果是多少?</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  <span class="attr">status</span>: <span class="number">240</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> result = obj.<span class="property">status</span> &gt;= <span class="number">200</span> &amp;&amp; obj.<span class="property">status</span> &lt; <span class="number">300</span></span><br></pre></td></tr></table></figure>
+
+<p>A. true</p>
+<p>B. 大于</p>
+<p>C. 240</p>
+<p>D. false</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>选A</li>
+</ul>
+</details>
+
+
+</li>
+<li><p>下面代码运行结果是多少？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = <span class="string">&#x27;http://www.baidu.com&#x27;</span></span><br><span class="line">result += <span class="string">&#x27;?a=10&#x27;</span></span><br><span class="line">result += <span class="string">&#x27;&amp;b=20&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>A：’<a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a>‘</p>
+<p>B：’?a&#x3D;10’</p>
+<p>C：’&amp;b&#x3D;20’</p>
+<p>D：’<a target="_blank" rel="noopener" href="http://www.baidu.com/?a=10&b=20">http://www.baidu.com?a=10&amp;b=20</a>‘</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>选D</li>
+</ul>
+</details>
+
+
+</li>
+<li><p>哪个事件能实时检测到输入框值的变化？</p>
+<p>A：input 事件</p>
+<p>B：change 事件</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>选A</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>XMLHttpRequest 的学习</li>
+<li>Promise </li>
+<li>封装简易版 axios</li>
+<li>案例 - 天气预报</li>
+</ul>
+<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><ol>
+<li>了解原生 AJAX 语法 - XMLHttpRequest（XHR）</li>
+<li>了解 Promise 的概念和使用</li>
+<li>了解 axios 内部工作的大概过程（XHR + Promise）</li>
+<li>案例 - 天气预报</li>
+</ol>
+<h2 id="01-XMLHttpRequest-基础使用"><a href="#01-XMLHttpRequest-基础使用" class="headerlink" title="01.XMLHttpRequest - 基础使用"></a>01.XMLHttpRequest - 基础使用</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>了解 AJAX 原理 XHR 的基础使用</li>
+</ul>
+<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>AJAX 是浏览器与服务器通信的技术，采用 XMLHttpRequest 对象相关代码</p>
+</li>
+<li><p>axios 是对 XHR 相关代码进行了封装，让我们只关心传递的接口参数</p>
+</li>
+<li><p>学习 XHR 也是了解 axios 内部与服务器交互过程的真正原理</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230221182835545.png" alt="image-20230221182835545"></p>
+</li>
+<li><p>语法如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230221183057392.png" alt="image-20230221183057392"></p>
+</li>
+<li><p>以一个需求来体验下原生 XHR 语法</p>
+<blockquote>
+<p>获取所有省份列表并展示到页面上</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>AJAX 原理是什么?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>window 提供的 XMLHttpRequest</li>
+</ul>
+</details>
+</li>
+<li><p>为什么学习 XHR ？</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>有更多与服务器数据通信方式</li>
+<li>了解 axios 内部原理</li>
+</ul>
+</details>
+</li>
+<li><p>XHR 使用步骤？</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>1. 创建 XHR 对象 2. 调用 open 方法，设置 url 和请求方法 3. 监听 loadend 事件，接收结果 4. 调用 send 方法，发起请求</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="02-XMLHttpRequest-查询参数"><a href="#02-XMLHttpRequest-查询参数" class="headerlink" title="02.XMLHttpRequest - 查询参数"></a>02.XMLHttpRequest - 查询参数</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>使用 XHR 传递查询参数给服务器，获取匹配数据</li>
+</ul>
+<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li>复习下什么是查询参数：携带额外信息给服务器，返回匹配想要的数据</li>
+<li>查询参数原理要携带的位置和语法：url?参数名&#x3D;值&amp;参数名&#x3D;值</li>
+<li>所以，原生 XHR 需要自己在 url 后面携带查询参数字符串，没有 axios 帮助我们了</li>
+<li>以需求来体验：查询河北省下属的城市列表</li>
+<li>切换到代码区，编码实现</li>
+</ol>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>XHR 如何携带查询参数?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>在调用 open 方法的时候，在 url? 后面按照指定格式拼接参数名和值</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="03-案例-地区查询"><a href="#03-案例-地区查询" class="headerlink" title="03.案例 - 地区查询"></a>03.案例 - 地区查询</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>使用 XHR 完成案例地区查询</li>
+</ul>
+<h3 id="讲解-2"><a href="#讲解-2" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>需求：和我们之前做的类似，就是不用 axios 而是用 XHR 实现，输入省份和城市名字后，点击查询，传递多对查询参数并获取地区列表的需求</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230221184135458.png" alt="image-20230221184135458"></p>
+</li>
+<li><p>但是多对查询参数，如果自己拼接很麻烦，这里用 URLSearchParams 把参数对象转成“参数名&#x3D;值&amp;参数名&#x3D;值“格式的字符串，语法如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230221184259352.png" alt="image-20230221184259352"></p>
+</li>
+</ol>
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>JS 对象如何转成查询参数格式字符串?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>在调用 open 方法的时候，在 url? 后面按照指定格式拼接参数名和值</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="04-XMLHttpRequest-数据提交"><a href="#04-XMLHttpRequest-数据提交" class="headerlink" title="04.XMLHttpRequest - 数据提交"></a>04.XMLHttpRequest - 数据提交</h2><h3 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>通过 XHR 提交用户名和密码，完成注册功能</li>
+</ul>
+<h3 id="讲解-3"><a href="#讲解-3" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>需求：通过 XHR 完成注册用户功能</p>
+</li>
+<li><p>注意1：但是这次没有 axios 帮我们了，我们需要自己设置请求头 Content-Type：application&#x2F;json，来告诉服务器端，我们发过去的内容类型是 JSON 字符串，让他转成对应数据结构取值使用</p>
+</li>
+<li><p>注意2：没有 axios 了，我们前端要传递的请求体数据，也没人帮我把 JS 对象转成 JSON 字符串了，需要我们自己转换</p>
+</li>
+<li><p>注意3：原生 XHR 需要在 send 方法调用时，传入请求体携带</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230221190304208.png" alt="image-20230221190304208"></p>
+</li>
+</ol>
+<h3 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>XHR 如何提交请求体数据?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>在 send 中携带请求体数据，要按照后端要求的内容类型携带</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="05-认识-Promise"><a href="#05-认识-Promise" class="headerlink" title="05.认识_Promise"></a>05.认识_Promise</h2><h3 id="目标-4"><a href="#目标-4" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>认识 Promise 的作用和好处以及使用步骤</li>
+</ul>
+<h3 id="讲解-4"><a href="#讲解-4" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>什么是 Promise ？</p>
+<ul>
+<li>Promise 对象用于表示一个异步操作的最终完成（或失败）及其结构值</li>
+</ul>
+</li>
+<li><p>Promise 的好处是什么？</p>
+<ul>
+<li><p>逻辑更清晰（成功或失败会关联后续的处理函数）</p>
+</li>
+<li><p>了解 axios 函数内部运作的机制</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230222113651404.png" alt="image-20230222113651404"></p>
+</li>
+<li><p>能解决回调函数地狱问题（后面会讲到），今天先来看下它的基础使用</p>
+</li>
+</ul>
+</li>
+<li><p>Promise 管理异步任务，语法怎么用?</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230222115838867.png" alt="image-20230222115838867"></p>
+</li>
+</ol>
+<h3 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>什么是 Promise ?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>表示（管理）一个异步操作最终状态和结果值的对象</li>
+</ul>
+</details>
+</li>
+<li><p>为什么学习 Promise ?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>成功和失败状态，可以关联对应处理函数，了解 axios 内部运作的原理</li>
+</ul>
+</details>
+</li>
+<li><p>Promise 使用步骤？</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>1. new Promise 对象执行异步任务。2. 用 resolve 关联 then 的回调函数传递成功结果。3.用 reject 关联 catch 的回调函数传递失败结果。</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="06-认识-Promise-的状态"><a href="#06-认识-Promise-的状态" class="headerlink" title="06.认识_Promise 的状态"></a>06.认识_Promise 的状态</h2><h3 id="目标-5"><a href="#目标-5" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>认识 Promise 的三种状态，知道如何关联成功&#x2F;失败的处理函数</li>
+</ul>
+<h3 id="讲解-5"><a href="#讲解-5" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>为什么要了解 Promise 的三种状态 ？</p>
+<ul>
+<li>知道 Promise 对象如何关联的处理函数，以及代码的执行顺序</li>
+</ul>
+</li>
+<li><p>Promise 有哪三种状态？</p>
+<blockquote>
+<p>每个 Promise 对象必定处于以下三种状态之一</p>
+</blockquote>
+<ol>
+<li>待定（pending）：初始状态，既没有被兑现，也没有被拒绝</li>
+<li>已兑现（fulfilled）：操作成功完成</li>
+<li>已拒绝（rejected）：操作失败</li>
+</ol>
+<blockquote>
+<p>状态的英文字符串，可以理解为 Promise 对象内的字符串标识符，用于判断什么时候调用哪一个处理函数</p>
+</blockquote>
+</li>
+<li><p>Promise 的状态改变有什么用：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230222120815484.png" alt="image-20230222120815484"></p>
+</li>
+<li><p>注意：每个 Promise 对象一旦被兑现&#x2F;拒绝，那就是已敲定了，状态无法再被改变</p>
+</li>
+</ol>
+<h3 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>Promise 对象有哪 3 种状态?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>待定 pending，已兑现 fulfilled，已拒绝 rejected</li>
+</ul>
+</details>
+</li>
+<li><p>Promise 状态有什么用?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>状态改变后，如何关联处理函数</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="07-使用-Promise-和-XHR-获取省份列表"><a href="#07-使用-Promise-和-XHR-获取省份列表" class="headerlink" title="07.使用 Promise 和 XHR_获取省份列表"></a>07.使用 Promise 和 XHR_获取省份列表</h2><h3 id="目标-6"><a href="#目标-6" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>尝试用 Promise 管理 XHR 异步任务</li>
+</ul>
+<h3 id="讲解-6"><a href="#讲解-6" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>Promise 和 XHR 都已经学过基础语法了，我们可以来结合使用一下了</p>
+</li>
+<li><p>需求：使用 Promise 和 XHR 请求省份列表数据并展示到页面上</p>
+</li>
+<li><p>步骤：</p>
+<ol>
+<li><p>创建 Promise 对象</p>
+</li>
+<li><p>执行 XHR 异步代码，获取省份列表数据</p>
+</li>
+<li><p>关联成功或失败回调函数，做后续的处理</p>
+<blockquote>
+<p>错误情况：用地址错了404演示</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="小结-6"><a href="#小结-6" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>AJAX 如何判断是否请求响应成功了?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>响应状态码在大于等于 200 并且小于 300 的范围是成功的</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="08-封装-简易axios-获取省份列表"><a href="#08-封装-简易axios-获取省份列表" class="headerlink" title="08.封装_简易axios-获取省份列表"></a>08.封装_简易axios-获取省份列表</h2><h3 id="目标-7"><a href="#目标-7" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>模拟 axios 函数封装，更深入了解 axios 内部运作原理</li>
+</ul>
+<h3 id="讲解-7"><a href="#讲解-7" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>需求：基于 Promise 和 XHR 封装 myAxios 函数，获取省份列表展示到页面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230222130217597.png" alt="image-20230222130217597"></p>
+</li>
+<li><p>步骤：</p>
+<ol>
+<li>定义 myAxios 函数，接收配置对象，返回 Promise 对象</li>
+<li>发起 XHR 请求，默认请求方法为 GET</li>
+<li>调用成功&#x2F;失败的处理程序</li>
+<li>使用 myAxios 函数，获取省份列表展示</li>
+</ol>
+</li>
+</ol>
+<h3 id="小结-7"><a href="#小结-7" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>自己封装的 myAxios 如何设置默认请求方法 GET?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>config.method 判断有值就用，无值用‘GET’方法</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="09-封装-简易axios-获取地区列表"><a href="#09-封装-简易axios-获取地区列表" class="headerlink" title="09.封装_简易axios-获取地区列表"></a>09.封装_简易axios-获取地区列表</h2><h3 id="目标-8"><a href="#目标-8" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>修改 myAxios 函数支持传递查询参数，获取辽宁省，大连市的地区列表</li>
+</ul>
+<h3 id="讲解-8"><a href="#讲解-8" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li>修改步骤：<ol>
+<li>myAxios 函数调用后，判断 params 选项</li>
+<li>基于 URLSearchParams 转换查询参数字符串</li>
+<li>使用自己封装的 myAxios 函数显示地区列表</li>
+</ol>
+</li>
+</ol>
+<h3 id="小结-8"><a href="#小结-8" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>外面传入查询参数对象，myAxios 函数内如何转查询参数字符串?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>使用 URLSearchParams 对象转换</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="10-封装-简易axios-注册用户"><a href="#10-封装-简易axios-注册用户" class="headerlink" title="10.封装_简易axios-注册用户"></a>10.封装_简易axios-注册用户</h2><h3 id="目标-9"><a href="#目标-9" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>修改 myAxios 函数支持传递请求体数据，完成注册用户</li>
+</ul>
+<h3 id="讲解-9"><a href="#讲解-9" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li>修改步骤：<ol>
+<li>myAxios 函数调用后，判断 data 选项</li>
+<li>转换数据类型，在 send 方法中发送</li>
+<li>使用自己封装的 myAxios 函数完成注册用户功能</li>
+</ol>
+</li>
+</ol>
+<h3 id="小结-9"><a href="#小结-9" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>外面传入 data 选项，myAxios 函数内如何携带请求体参数?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>判断外面传入了这个属性，自己转成 JSON 字符串并设置请求头并在 send 方法中携带</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="11-12-案例-天气预报-默认数据"><a href="#11-12-案例-天气预报-默认数据" class="headerlink" title="11-12.案例_天气预报-默认数据"></a>11-12.案例_天气预报-默认数据</h2><h3 id="目标-10"><a href="#目标-10" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>把北京市的数据，填充到页面默认显示</li>
+</ul>
+<h3 id="讲解-10"><a href="#讲解-10" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>介绍本项目要完成的效果，和要实现的步骤和分的步骤和视频</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230222133327806.png" alt="image-20230222133327806"></p>
+</li>
+<li><p>步骤</p>
+<ol>
+<li>先获取北京市天气预报，展示</li>
+<li>搜索城市列表，展示</li>
+<li>点击城市，切换显示对应天气数据</li>
+</ol>
+</li>
+<li><p>本视频先封装函数，获取城市天气并设置页面内容</p>
+</li>
+</ol>
+<h3 id="小结-10"><a href="#小结-10" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>做完这个项目会带来什么收货?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>可以做一个真正有意义的业务，查看城市的天气预报，测试自己封装的 myAxios 函数是否好用</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="13-案例-天气预报-搜索城市列表"><a href="#13-案例-天气预报-搜索城市列表" class="headerlink" title="13.案例_天气预报-搜索城市列表"></a>13.案例_天气预报-搜索城市列表</h2><h3 id="目标-11"><a href="#目标-11" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>根据关键字，展示匹配的城市列表</li>
+</ul>
+<h3 id="讲解-11"><a href="#讲解-11" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>介绍本视频要完成的效果</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230222133553010.png" alt="image-20230222133553010"></p>
+</li>
+<li><p>步骤</p>
+<ol>
+<li>绑定 input 事件，获取关键字</li>
+<li>获取展示城市列表数据</li>
+</ol>
+</li>
+</ol>
+<h3 id="小结-11"><a href="#小结-11" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>监听输入框实时改变的事件是什么?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>input事件</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="14-案例-天气预报-展示城市天气"><a href="#14-案例-天气预报-展示城市天气" class="headerlink" title="14.案例_天气预报-展示城市天气"></a>14.案例_天气预报-展示城市天气</h2><h3 id="目标-12"><a href="#目标-12" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>点击搜索框列表城市名字，切换对应城市天气数据</li>
+</ul>
+<h3 id="讲解-12"><a href="#讲解-12" class="headerlink" title="讲解"></a>讲解</h3><ol>
+<li><p>介绍本视频要完成的效果</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/image-20230222134653884.png" alt="image-20230222134653884"></p>
+</li>
+<li><p>步骤</p>
+<ol>
+<li>检测搜索列表点击事件，获取城市 code 值</li>
+<li>复用获取展示城市天气函数</li>
+</ol>
+</li>
+</ol>
+<h3 id="小结-12"><a href="#小结-12" class="headerlink" title="小结"></a>小结</h3><ol>
+<li><p>这次我们获取城市天气，传递的是城市名字还是 code 值?</p>
+<details>
+<summary>答案</summary>
+<ul>
+<li>看后端要求传递什么，就传什么即可</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="今日重点-必须会"><a href="#今日重点-必须会" class="headerlink" title="今日重点(必须会)"></a>今日重点(必须会)</h2><ol>
+<li>了解 AJAX 原理之 XMLHttpRequest（XHR）相关语法</li>
+<li>了解 Promise 的作用和三种状态</li>
+<li>了解 axios 内部运作的过程</li>
+<li>完成案例-天气预报</li>
+</ol>
+<h2 id="今日作业-必完成"><a href="#今日作业-必完成" class="headerlink" title="今日作业(必完成)"></a>今日作业(必完成)</h2><p>参考作业文件夹作用</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX/Getting_Started">Ajax原生-mdn</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests">同步异步-mdn</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Callback_function">回调函数-mdn</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise-mdn</a></li>
+</ol>
+<h1 id="Day03-AJAX原理-1"><a href="#Day03-AJAX原理-1" class="headerlink" title="Day03_AJAX原理"></a>Day03_AJAX原理</h1><h2 id="客观题"><a href="#客观题" class="headerlink" title="客观题"></a>客观题</h2><ul>
+<li><p>参考客观题目录下的excel</p>
+</li>
+<li><p>在线直接答题：<a target="_blank" rel="noopener" href="https://ks.wjx.top/vm/YLDl1RR.aspx#">https://ks.wjx.top/vm/YLDl1RR.aspx#</a></p>
+<blockquote>
+<p>ps：本测试链接来自问卷星，请不要轻信问卷星广告！</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="主观题"><a href="#主观题" class="headerlink" title="主观题"></a>主观题</h2><h3 id="作业1-英雄百科"><a href="#作业1-英雄百科" class="headerlink" title="作业1 - 英雄百科"></a>作业1 - 英雄百科</h3><p>目标：完成如下英雄百科的效果</p>
+<p>要求：</p>
+<ol>
+<li>默认上来展示所有英雄列表数据</li>
+<li>关键字搜索，并判断为空，根据关键词搜索匹配英雄</li>
+<li>点击英雄显示英雄详情</li>
+</ol>
+<p>接口文档：<a target="_blank" rel="noopener" href="https://www.apifox.cn/apidoc/project-1937884/api-64104712">https://www.apifox.cn/apidoc/project-1937884/api-64104712</a></p>
+<p>效果如下：配套标签和样式在文件夹内</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/hm8.1ajax/hero_list.gif" alt="hero_list"></p>
+<h2 id="排错题"><a href="#排错题" class="headerlink" title="排错题"></a>排错题</h2><p>配套文件夹内的《案例-天气预报》里面有 3 处错误，请帮帮这位同学实现更换网站背景的效果吧</p>
+<h2 id="面试题-自行扩展"><a href="#面试题-自行扩展" class="headerlink" title="面试题(自行扩展)"></a>面试题(自行扩展)</h2><ol>
+<li><p>你是怎么理解 Promise ?</p>
+<p><a target="_blank" rel="noopener" href="https://lamphc.github.io/fe-up/#/es6/promise">参考文档</a></p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="https://webxc.eu.org">小城故事</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="https://webxc.eu.org/post/fs67/">https://webxc.eu.org/post/fs67/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://webxc.eu.org" target="_blank">小城故事</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Ajax%E7%AC%94%E8%AE%B0/">Ajax笔记</a></div><div class="post_share"><div class="social-share" data-image="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://npm.elemecdn.com/webxc@1.0.0/lxfs/wechat.png" target="_blank"><img class="post-qr-code-img" src="https://npm.elemecdn.com/webxc@1.0.0/lxfs/wechat.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/webxc@1.0.0/lxfs/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="https://npm.elemecdn.com/webxc@1.0.0/lxfs/alipay.jpg" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/aw67/"><img class="prev-cover" src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp" onerror="onerror=null;src='https://npm.elemecdn.com/webxc@1.0.2/banner/404.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇文章</div><div class="prev_info">Ajax第二天</div></div></a></div><div class="next-post pull-right"><a href="/post/or01/"><img class="next-cover" src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp" onerror="onerror=null;src='https://npm.elemecdn.com/webxc@1.0.2/banner/404.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇文章</div><div class="next_info">Ajax第四天</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/as67/" title="Ajax第一天"><img class="cover" src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-31</div><div class="title">Ajax第一天</div></div></a></div><div><a href="/post/aw67/" title="Ajax第二天"><img class="cover" src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-03</div><div class="title">Ajax第二天</div></div></a></div><div><a href="/post/or01/" title="Ajax第四天"><img class="cover" src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-08</div><div class="title">Ajax第四天</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://npm.elemecdn.com/webxc@1.0.0/logo/logo.jpg" onerror="this.onerror=null;this.src='https://npm.elemecdn.com/webxc@1.0.2/banner/404.gif'" alt="avatar"/></div><div class="author-info__name">小城故事</div><div class="author-info__description">小城故事 记录生活和学习文章</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">95</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://tenapi.cn/qqzlk/?qq=2848141597" target="_blank" title="QQ"><i class="iconfont icon-QQ"></i></a><a class="social-icon" href="https://npm.elemecdn.com/webxc@1.0.0/lxfs/wechat.jpg" target="_blank" title="微信"><i class="iconfont icon-weixin"></i></a><a class="social-icon" href="https://github.com/web-xc" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="https://space.bilibili.com/2134826455" target="_blank" title="BiliBili"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=323682437" target="_blank" title="网易云音乐"><i class="iconfont icon-wyy"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">原网站因使用.ml域名被回收, 再加上本人因学习原因, 没怎么打理博客, 使用了https://webxc.eu.org域名来维持博客运行, 如果有加友联的朋友们, 去友联页看信息即可, 如果原来有加过的, 麻烦在原来域名后缀改一下(.ml ==> .eu.org)就行, 博客写的太乱了, 没时间打理, 兄弟们谅解😁😁~~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Day03-AJAX%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">Day03_AJAX原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E8%87%AA%E6%B5%8B"><span class="toc-number"></span> <span class="toc-text">知识点自测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number"></span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87"><span class="toc-number"></span> <span class="toc-text">学习目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#01-XMLHttpRequest-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-number"></span> <span class="toc-text">01.XMLHttpRequest - 基础使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-XMLHttpRequest-%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0"><span class="toc-number"></span> <span class="toc-text">02.XMLHttpRequest - 查询参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-1"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-1"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E6%A1%88%E4%BE%8B-%E5%9C%B0%E5%8C%BA%E6%9F%A5%E8%AF%A2"><span class="toc-number"></span> <span class="toc-text">03.案例 - 地区查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-2"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-2"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-XMLHttpRequest-%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BA%A4"><span class="toc-number"></span> <span class="toc-text">04.XMLHttpRequest - 数据提交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-3"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-3"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-3"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E8%AE%A4%E8%AF%86-Promise"><span class="toc-number"></span> <span class="toc-text">05.认识_Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-4"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-4"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-4"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#06-%E8%AE%A4%E8%AF%86-Promise-%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-number"></span> <span class="toc-text">06.认识_Promise 的状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-5"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-5"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-5"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#07-%E4%BD%BF%E7%94%A8-Promise-%E5%92%8C-XHR-%E8%8E%B7%E5%8F%96%E7%9C%81%E4%BB%BD%E5%88%97%E8%A1%A8"><span class="toc-number"></span> <span class="toc-text">07.使用 Promise 和 XHR_获取省份列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-6"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-6"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-6"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#08-%E5%B0%81%E8%A3%85-%E7%AE%80%E6%98%93axios-%E8%8E%B7%E5%8F%96%E7%9C%81%E4%BB%BD%E5%88%97%E8%A1%A8"><span class="toc-number"></span> <span class="toc-text">08.封装_简易axios-获取省份列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-7"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-7"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-7"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#09-%E5%B0%81%E8%A3%85-%E7%AE%80%E6%98%93axios-%E8%8E%B7%E5%8F%96%E5%9C%B0%E5%8C%BA%E5%88%97%E8%A1%A8"><span class="toc-number"></span> <span class="toc-text">09.封装_简易axios-获取地区列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-8"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-8"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-8"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%B0%81%E8%A3%85-%E7%AE%80%E6%98%93axios-%E6%B3%A8%E5%86%8C%E7%94%A8%E6%88%B7"><span class="toc-number"></span> <span class="toc-text">10.封装_简易axios-注册用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-9"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-9"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-9"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-12-%E6%A1%88%E4%BE%8B-%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5-%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE"><span class="toc-number"></span> <span class="toc-text">11-12.案例_天气预报-默认数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-10"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-10"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-10"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E6%A1%88%E4%BE%8B-%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5-%E6%90%9C%E7%B4%A2%E5%9F%8E%E5%B8%82%E5%88%97%E8%A1%A8"><span class="toc-number"></span> <span class="toc-text">13.案例_天气预报-搜索城市列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-11"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-11"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-11"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E6%A1%88%E4%BE%8B-%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5-%E5%B1%95%E7%A4%BA%E5%9F%8E%E5%B8%82%E5%A4%A9%E6%B0%94"><span class="toc-number"></span> <span class="toc-text">14.案例_天气预报-展示城市天气</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-12"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%A7%A3-12"><span class="toc-number">2.</span> <span class="toc-text">讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-12"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E9%87%8D%E7%82%B9-%E5%BF%85%E9%A1%BB%E4%BC%9A"><span class="toc-number"></span> <span class="toc-text">今日重点(必须会)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E4%BD%9C%E4%B8%9A-%E5%BF%85%E5%AE%8C%E6%88%90"><span class="toc-number"></span> <span class="toc-text">今日作业(必完成)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number"></span> <span class="toc-text">参考文档</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Day03-AJAX%E5%8E%9F%E7%90%86-1"><span class="toc-number"></span> <span class="toc-text">Day03_AJAX原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E8%A7%82%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">客观题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A7%82%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">主观题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A1-%E8%8B%B1%E9%9B%84%E7%99%BE%E7%A7%91"><span class="toc-number">1.</span> <span class="toc-text">作业1 - 英雄百科</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E9%94%99%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">排错题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E8%A1%8C%E6%89%A9%E5%B1%95"><span class="toc-number"></span> <span class="toc-text">面试题(自行扩展)</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/ds2s/" title="整个前端面试题"><img src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png" onerror="this.onerror=null;this.src='https://npm.elemecdn.com/webxc@1.0.2/banner/404.gif'" alt="整个前端面试题"/></a><div class="content"><a class="title" href="/post/ds2s/" title="整个前端面试题">整个前端面试题</a><time datetime="2023-08-30T18:00:00.000Z" title="发表于 2023-08-31 02:00:00">2023-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/ds23/" title="常见前端面试题"><img src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png" onerror="this.onerror=null;this.src='https://npm.elemecdn.com/webxc@1.0.2/banner/404.gif'" alt="常见前端面试题"/></a><div class="content"><a class="title" href="/post/ds23/" title="常见前端面试题">常见前端面试题</a><time datetime="2023-08-28T10:30:00.000Z" title="发表于 2023-08-28 18:30:00">2023-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/fe33/" title="硅谷甄选运营平台"><img src="https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png" onerror="this.onerror=null;this.src='https://npm.elemecdn.com/webxc@1.0.2/banner/404.gif'" alt="硅谷甄选运营平台"/></a><div class="content"><a class="title" href="/post/fe33/" title="硅谷甄选运营平台">硅谷甄选运营平台</a><time datetime="2023-07-25T19:55:00.000Z" title="发表于 2023-07-26 03:55:00">2023-07-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By 小城故事</div><div class="framework-info"><span> </span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20235221">萌ICP备20235221号</a><span class="footer-separator">|</span><span> </span><a target="_blank" rel="noopener" href="https://icp.gov.moe/">萌ICP查询</a><div id="running-time"></div></div><script>setInterval(()=>{let create_time=Math.round(new Date('2021-11-21 01:35:06').getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  正在载入文件,请稍后</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="https://npm.elemecdn.com/hexo-theme-butterfly/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-butterfly@4.4.0/source/js/main.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script src="https://npm.elemecdn.com/hexo-theme-butterfly/source/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://npm.elemecdn.com/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://blog2.webxc.eu.org/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://blog2.webxc.eu.org/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script data-pjax="false" defer="false" src="https://npm.elemecdn.com/webxc@1.0.16/css/style.js"></script><script defer="false" src="https://npm.elemecdn.com/hexo-theme-butterfly@4.4.0/source/js/search/local-search.js"></scrip><script src="https://npm.elemecdn.com/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax",".tk-comments-container"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-08-31</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/ds2s/&quot;);" href="javascript:void(0);" alt="">整个前端面试题</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-08-28</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/ds23/&quot;);" href="javascript:void(0);" alt="">常见前端面试题</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-07-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/fe33/&quot;);" href="javascript:void(0);" alt="">硅谷甄选运营平台</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-07-17</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/ew32/&quot;);" href="javascript:void(0);" alt="">Vue第三天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-07-16</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/aw92/&quot;);" href="javascript:void(0);" alt="">Vue第二天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-07-14</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/ou67/&quot;);" href="javascript:void(0);" alt="">Vue第一天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/vue.png);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-07-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/fn32/&quot;);" href="javascript:void(0);" alt="">Vue框架笔记</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://npm.elemecdn.com/webxc/cover/js1.webp);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-06-21</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/fe11/&quot;);" href="javascript:void(0);" alt="">Vue前置JS功底</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/promise.webp);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-06-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/pr67/&quot;);" href="javascript:void(0);" alt="">ES6-Promise语法与原理</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-06-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/or01/&quot;);" href="javascript:void(0);" alt="">Ajax第四天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://cdn1.tianli0.top/gh/web-xc/iMG/postss/ajax.webp);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-06-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/fs67/&quot;);" href="javascript:void(0);" alt="">Ajax第三天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://npm.elemecdn.com/webxc/cover/js1.webp);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-05-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/fe66/&quot;);" href="javascript:void(0);" alt="">JS进阶第四天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://npm.elemecdn.com/webxc/cover/js1.webp);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-05-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/fe99/&quot;);" href="javascript:void(0);" alt="">JS进阶第三天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://npm.elemecdn.com/webxc/cover/js1.webp);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2023-05-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/us87/&quot;);" href="javascript:void(0);" alt="">JS进阶第二天</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://npm.elemecdn.com/webxc@1.0.12/cover/cover15.jpg);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2022-10-31</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/2db5/&quot;);" href="javascript:void(0);" alt="">移动开发-Flex布局</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://npm.elemecdn.com/webxc@1.0.12/cover/cover16.jpg);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2022-11-14</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/1c7e/&quot;);" href="javascript:void(0);" alt="">移动开发-媒体查询</a><div class="blog-slider__text">点击查看</div></div></div><div class="blog-slider__item swiper-slide" style="background:url(https://npm.elemecdn.com/webxc@1.0.12/cover/cover17.jpg);border-radius:12px;opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="blog-slider__content"><span class="blog-slider__code">2022-11-17</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/7fc/&quot;);" href="javascript:void(0);" alt="">移动开发-响应式</a><div class="blog-slider__text">点击查看</div></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/webxc@1.0.12/css/swiper/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/webxc@1.0.12/css/swiper/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
