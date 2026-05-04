@@ -2154,31 +2154,6 @@
     
     
     <entry>
-      <title>免费常用的前端CDN库</title>
-      <link href="/post/4073997736/"/>
-      <url>/post/4073997736/</url>
-      
-        <content type="html"><![CDATA[<h2 id="免费常用的前端CDN库"><a href="#免费常用的前端CDN库" class="headerlink" title="免费常用的前端CDN库"></a>免费常用的前端CDN库</h2><h4 id="1️⃣https-www-jsdelivr-com"><a href="#1️⃣https-www-jsdelivr-com" class="headerlink" title="1️⃣https://www.jsdelivr.com/"></a>1️⃣<a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a></h4><p>使用最为广泛的CDN了，除了有静态库的加速外，还有npmgithubWordPress加速，甚至还能加速你自己的GitHub库。不过21年年底，国内CDN备案给注销了，现在使用的是日本等周边的服务器，速度已经比不上以前了。</p><h4 id="2️⃣https-cdnjs-com"><a href="#2️⃣https-cdnjs-com" class="headerlink" title="2️⃣https://cdnjs.com/"></a>2️⃣<a href="https://cdnjs.com/">https://cdnjs.com/</a></h4><p>CDNJS提供非常完整的 JavaScript 库，无论是热门或是冷门的一应俱全。若你觉得它们缺少哪些好用的函式库，也可以自行提交到网站里，通过审核后就 CDNJS 就会为你分流 js文件！唯一的缺点是国外的。</p><h4 id="3️⃣http-staticfile-org"><a href="#3️⃣http-staticfile-org" class="headerlink" title="3️⃣http://staticfile.org/"></a>3️⃣<a href="http://staticfile.org/">http://staticfile.org/</a></h4><p>七牛云提供的CDN库，速度不错。</p><h4 id="4️⃣http-cdn-bytedance-com"><a href="#4️⃣http-cdn-bytedance-com" class="headerlink" title="4️⃣http://cdn.bytedance.com/"></a>4️⃣<a href="http://cdn.bytedance.com/">http://cdn.bytedance.com/</a></h4><p>字节跳动静态资源库，CDN节点也非常多，值得推荐的国内站点，背靠字节跳动，质量也比较有保障。</p><h4 id="5️⃣https-www-bootcdn-cn"><a href="#5️⃣https-www-bootcdn-cn" class="headerlink" title="5️⃣https://www.bootcdn.cn/"></a>5️⃣<a href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></h4><p>bootcdn，国内节点众多，BootCDN 是猫云联合 Bootstrap 中文网 共同支持并维护的前端开源项目免费 CDN 服务，致力于为 Bootstrap、jQuery、React、Vue.js 一样优秀的前端开源项目提供稳定、快速的免费 CDN 加速服务。BootCDN 所收录的开源项目主要同步于 cdnjs 开源项目仓库。</p><h4 id="6️⃣https-cdn-baomitu-com"><a href="#6️⃣https-cdn-baomitu-com" class="headerlink" title="6️⃣https://cdn.baomitu.com/"></a>6️⃣<a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></h4><p>原360前端库的资源，除了有静态库，还有Google字体库</p><h4 id="7️⃣http-www-asp-net-ajaxlibrary-cdn-ashx"><a href="#7️⃣http-www-asp-net-ajaxlibrary-cdn-ashx" class="headerlink" title="7️⃣http://www.asp.net/ajaxlibrary/cdn.ashx"></a>7️⃣<a href="http://www.asp.net/ajaxlibrary/cdn.ashx">http://www.asp.net/ajaxlibrary/cdn.ashx</a></h4><p>Microsoft ASP.net CDN，ASP.NET 开发团队推出的一个新的微软 Ajax CDN（Content Delivery Network，内容分发网络）服务，该服务提供了对 AJAX 库（包括 jQuery 和 ASP.NET AJAX）的缓存支持。该服务是免费的，不需任何注册，可用于商业性或非商业性用途。</p><p>Ps：微软出品，自然不会太差。虽然在国外，速度依然不会太慢（当然比不上国内的其他 cdn）。</p><h4 id="8️⃣https-cdn-baomitu-com"><a href="#8️⃣https-cdn-baomitu-com" class="headerlink" title="8️⃣https://cdn.baomitu.com/"></a>8️⃣<a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></h4><p>原 360 前端静态资源库是由奇舞团支持并维护的开源项目免费 CDN 服务，支持 HTTPS 和 HTTP&#x2F;2，囊括上千个前端资源库和 Google 字体库。该站静态资源库数据均同步于 <a href="https://github.com/cdnjs/packages">cdnjs</a> 开源项目仓库。</p><h4 id="9️⃣https-unpkg-com"><a href="#9️⃣https-unpkg-com" class="headerlink" title="9️⃣https://unpkg.com/"></a>9️⃣<a href="https://unpkg.com/">https://unpkg.com/</a></h4><p>unpkg 是一个内容源自 npm 的全球快速 CDN。<br>它部署在 cloudflare 上，在大陆地区访问到的是香港节点。 它支持 h&#x2F;2 和很多新特性，如果不考虑网络延迟的原因，性能优化较为出色。在国内一些互联网公司也有镜像，例如知乎和饿了么。</p><h4 id="国内-Unpkg-镜像"><a href="#国内-Unpkg-镜像" class="headerlink" title="国内 Unpkg 镜像"></a>国内 Unpkg 镜像</h4><p>目前找了对外的国内 Unpkg 有两个：</p><ul><li>饿了么：<a href="https://npm.elemecdn.com/">https://npm.elemecdn.com/</a></li><li>知乎：<a href="https://unpkg.zhimg.com/">https://unpkg.zhimg.com/</a></li></ul><hr><h2 id="可用npm镜像"><a href="#可用npm镜像" class="headerlink" title="可用npm镜像"></a>可用npm镜像</h2><h4 id="jsDelivr"><a href="#jsDelivr" class="headerlink" title="jsDelivr"></a>jsDelivr</h4><p><a href="https://cdn.jsdelivr.net/npm">https://cdn.jsdelivr.net/npm</a></p><h4 id="unpkg"><a href="#unpkg" class="headerlink" title="unpkg"></a>unpkg</h4><p><a href="https://unpkg.com/">https://unpkg.com/</a></p><h4 id="unpkg-自建"><a href="#unpkg-自建" class="headerlink" title="unpkg 自建"></a>unpkg 自建</h4><p><a href="https://cdn.cbd.int/">https://cdn.cbd.int</a></p><h4 id="npm-element"><a href="#npm-element" class="headerlink" title="npm element"></a>npm element</h4><p><a href="http://npm.elemecdn.com/">http://npm.elemecdn.com/</a></p><h4 id="cdn1-tianli0-top"><a href="#cdn1-tianli0-top" class="headerlink" title="cdn1.tianli0.top"></a>cdn1.tianli0.top</h4><p><a href="https://tianli-blog.club/jsd/">https://tianli-blog.club/jsd/</a> 处申请</p><h4 id="cdn-afdelivr-top"><a href="#cdn-afdelivr-top" class="headerlink" title="cdn.afdelivr.top"></a>cdn.afdelivr.top</h4><p><a href="https://cdn.afdelivr.top/npm/%E5%8C%85%E5%90%8D@%E7%89%88%E6%9C%AC%E5%8F%B7/%E6%96%87%E4%BB%B6%E5%90%8D">https://cdn.afdelivr.top/npm/包名@版本号/文件名</a></p><p><a href="https://arcitcgn.cn/202.html">https://arcitcgn.cn/202.html</a></p><h3 id="其他cdn"><a href="#其他cdn" class="headerlink" title="其他cdn"></a>其他cdn</h3><h4 id="bootcdn"><a href="#bootcdn" class="headerlink" title="bootcdn"></a>bootcdn</h4><p><a href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></p><h4 id="loli-（cdnjs）"><a href="#loli-（cdnjs）" class="headerlink" title="loli （cdnjs）"></a>loli （cdnjs）</h4><p><a href="https://cdnjs.loli.net/">https://cdnjs.loli.net/</a></p><h4 id="Staticfile"><a href="#Staticfile" class="headerlink" title="Staticfile"></a>Staticfile</h4><p><a href="https://staticfile.org/">https://staticfile.org/</a></p><h4 id="75CDN"><a href="#75CDN" class="headerlink" title="75CDN"></a>75CDN</h4><p><a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></p><h4 id="今日头条-CDN"><a href="#今日头条-CDN" class="headerlink" title="今日头条 CDN"></a>今日头条 CDN</h4><p><a href="https://cdn.bytedance.com/">https://cdn.bytedance.com/</a></p><h4 id="cdnjs"><a href="#cdnjs" class="headerlink" title="cdnjs"></a>cdnjs</h4><p><a href="https://cdnjs.com/">https://cdnjs.com/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 其他技术栈 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 其他技术栈 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Vscode笔记-24款插件</title>
       <link href="/post/1400581313/"/>
       <url>/post/1400581313/</url>
@@ -2196,6 +2171,31 @@
         <tags>
             
             <tag> Vscode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>免费常用的前端CDN库</title>
+      <link href="/post/4073997736/"/>
+      <url>/post/4073997736/</url>
+      
+        <content type="html"><![CDATA[<h2 id="免费常用的前端CDN库"><a href="#免费常用的前端CDN库" class="headerlink" title="免费常用的前端CDN库"></a>免费常用的前端CDN库</h2><h4 id="1️⃣https-www-jsdelivr-com"><a href="#1️⃣https-www-jsdelivr-com" class="headerlink" title="1️⃣https://www.jsdelivr.com/"></a>1️⃣<a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a></h4><p>使用最为广泛的CDN了，除了有静态库的加速外，还有npmgithubWordPress加速，甚至还能加速你自己的GitHub库。不过21年年底，国内CDN备案给注销了，现在使用的是日本等周边的服务器，速度已经比不上以前了。</p><h4 id="2️⃣https-cdnjs-com"><a href="#2️⃣https-cdnjs-com" class="headerlink" title="2️⃣https://cdnjs.com/"></a>2️⃣<a href="https://cdnjs.com/">https://cdnjs.com/</a></h4><p>CDNJS提供非常完整的 JavaScript 库，无论是热门或是冷门的一应俱全。若你觉得它们缺少哪些好用的函式库，也可以自行提交到网站里，通过审核后就 CDNJS 就会为你分流 js文件！唯一的缺点是国外的。</p><h4 id="3️⃣http-staticfile-org"><a href="#3️⃣http-staticfile-org" class="headerlink" title="3️⃣http://staticfile.org/"></a>3️⃣<a href="http://staticfile.org/">http://staticfile.org/</a></h4><p>七牛云提供的CDN库，速度不错。</p><h4 id="4️⃣http-cdn-bytedance-com"><a href="#4️⃣http-cdn-bytedance-com" class="headerlink" title="4️⃣http://cdn.bytedance.com/"></a>4️⃣<a href="http://cdn.bytedance.com/">http://cdn.bytedance.com/</a></h4><p>字节跳动静态资源库，CDN节点也非常多，值得推荐的国内站点，背靠字节跳动，质量也比较有保障。</p><h4 id="5️⃣https-www-bootcdn-cn"><a href="#5️⃣https-www-bootcdn-cn" class="headerlink" title="5️⃣https://www.bootcdn.cn/"></a>5️⃣<a href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></h4><p>bootcdn，国内节点众多，BootCDN 是猫云联合 Bootstrap 中文网 共同支持并维护的前端开源项目免费 CDN 服务，致力于为 Bootstrap、jQuery、React、Vue.js 一样优秀的前端开源项目提供稳定、快速的免费 CDN 加速服务。BootCDN 所收录的开源项目主要同步于 cdnjs 开源项目仓库。</p><h4 id="6️⃣https-cdn-baomitu-com"><a href="#6️⃣https-cdn-baomitu-com" class="headerlink" title="6️⃣https://cdn.baomitu.com/"></a>6️⃣<a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></h4><p>原360前端库的资源，除了有静态库，还有Google字体库</p><h4 id="7️⃣http-www-asp-net-ajaxlibrary-cdn-ashx"><a href="#7️⃣http-www-asp-net-ajaxlibrary-cdn-ashx" class="headerlink" title="7️⃣http://www.asp.net/ajaxlibrary/cdn.ashx"></a>7️⃣<a href="http://www.asp.net/ajaxlibrary/cdn.ashx">http://www.asp.net/ajaxlibrary/cdn.ashx</a></h4><p>Microsoft ASP.net CDN，ASP.NET 开发团队推出的一个新的微软 Ajax CDN（Content Delivery Network，内容分发网络）服务，该服务提供了对 AJAX 库（包括 jQuery 和 ASP.NET AJAX）的缓存支持。该服务是免费的，不需任何注册，可用于商业性或非商业性用途。</p><p>Ps：微软出品，自然不会太差。虽然在国外，速度依然不会太慢（当然比不上国内的其他 cdn）。</p><h4 id="8️⃣https-cdn-baomitu-com"><a href="#8️⃣https-cdn-baomitu-com" class="headerlink" title="8️⃣https://cdn.baomitu.com/"></a>8️⃣<a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></h4><p>原 360 前端静态资源库是由奇舞团支持并维护的开源项目免费 CDN 服务，支持 HTTPS 和 HTTP&#x2F;2，囊括上千个前端资源库和 Google 字体库。该站静态资源库数据均同步于 <a href="https://github.com/cdnjs/packages">cdnjs</a> 开源项目仓库。</p><h4 id="9️⃣https-unpkg-com"><a href="#9️⃣https-unpkg-com" class="headerlink" title="9️⃣https://unpkg.com/"></a>9️⃣<a href="https://unpkg.com/">https://unpkg.com/</a></h4><p>unpkg 是一个内容源自 npm 的全球快速 CDN。<br>它部署在 cloudflare 上，在大陆地区访问到的是香港节点。 它支持 h&#x2F;2 和很多新特性，如果不考虑网络延迟的原因，性能优化较为出色。在国内一些互联网公司也有镜像，例如知乎和饿了么。</p><h4 id="国内-Unpkg-镜像"><a href="#国内-Unpkg-镜像" class="headerlink" title="国内 Unpkg 镜像"></a>国内 Unpkg 镜像</h4><p>目前找了对外的国内 Unpkg 有两个：</p><ul><li>饿了么：<a href="https://npm.elemecdn.com/">https://npm.elemecdn.com/</a></li><li>知乎：<a href="https://unpkg.zhimg.com/">https://unpkg.zhimg.com/</a></li></ul><hr><h2 id="可用npm镜像"><a href="#可用npm镜像" class="headerlink" title="可用npm镜像"></a>可用npm镜像</h2><h4 id="jsDelivr"><a href="#jsDelivr" class="headerlink" title="jsDelivr"></a>jsDelivr</h4><p><a href="https://cdn.jsdelivr.net/npm">https://cdn.jsdelivr.net/npm</a></p><h4 id="unpkg"><a href="#unpkg" class="headerlink" title="unpkg"></a>unpkg</h4><p><a href="https://unpkg.com/">https://unpkg.com/</a></p><h4 id="unpkg-自建"><a href="#unpkg-自建" class="headerlink" title="unpkg 自建"></a>unpkg 自建</h4><p><a href="https://cdn.cbd.int/">https://cdn.cbd.int</a></p><h4 id="npm-element"><a href="#npm-element" class="headerlink" title="npm element"></a>npm element</h4><p><a href="http://npm.elemecdn.com/">http://npm.elemecdn.com/</a></p><h4 id="cdn1-tianli0-top"><a href="#cdn1-tianli0-top" class="headerlink" title="cdn1.tianli0.top"></a>cdn1.tianli0.top</h4><p><a href="https://tianli-blog.club/jsd/">https://tianli-blog.club/jsd/</a> 处申请</p><h4 id="cdn-afdelivr-top"><a href="#cdn-afdelivr-top" class="headerlink" title="cdn.afdelivr.top"></a>cdn.afdelivr.top</h4><p><a href="https://cdn.afdelivr.top/npm/%E5%8C%85%E5%90%8D@%E7%89%88%E6%9C%AC%E5%8F%B7/%E6%96%87%E4%BB%B6%E5%90%8D">https://cdn.afdelivr.top/npm/包名@版本号/文件名</a></p><p><a href="https://arcitcgn.cn/202.html">https://arcitcgn.cn/202.html</a></p><h3 id="其他cdn"><a href="#其他cdn" class="headerlink" title="其他cdn"></a>其他cdn</h3><h4 id="bootcdn"><a href="#bootcdn" class="headerlink" title="bootcdn"></a>bootcdn</h4><p><a href="https://www.bootcdn.cn/">https://www.bootcdn.cn/</a></p><h4 id="loli-（cdnjs）"><a href="#loli-（cdnjs）" class="headerlink" title="loli （cdnjs）"></a>loli （cdnjs）</h4><p><a href="https://cdnjs.loli.net/">https://cdnjs.loli.net/</a></p><h4 id="Staticfile"><a href="#Staticfile" class="headerlink" title="Staticfile"></a>Staticfile</h4><p><a href="https://staticfile.org/">https://staticfile.org/</a></p><h4 id="75CDN"><a href="#75CDN" class="headerlink" title="75CDN"></a>75CDN</h4><p><a href="https://cdn.baomitu.com/">https://cdn.baomitu.com/</a></p><h4 id="今日头条-CDN"><a href="#今日头条-CDN" class="headerlink" title="今日头条 CDN"></a>今日头条 CDN</h4><p><a href="https://cdn.bytedance.com/">https://cdn.bytedance.com/</a></p><h4 id="cdnjs"><a href="#cdnjs" class="headerlink" title="cdnjs"></a>cdnjs</h4><p><a href="https://cdnjs.com/">https://cdnjs.com/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他技术栈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 其他技术栈 </tag>
             
         </tags>
       
